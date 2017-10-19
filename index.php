@@ -8,13 +8,12 @@
 <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 <!-- <link href="layout/styles/bootstrap.css" rel="stylesheet" /> -->
 
-
 </head>
 <body id="top">
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper row1"  style="position:fixed;z-index: 2;">
+<div class="wrapper row1"  style="position:fixed;z-index: 3;">
 <div class="wrapper row0">
 </div>
   <header id="header" class="hoc clear"> 
