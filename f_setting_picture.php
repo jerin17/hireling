@@ -2,6 +2,35 @@
 session_start();
 include 'sessionf.php';
 ?>
+<?php    
+include 'config.php';
+
+if(isset($_POST['remove']))
+{ 
+ // echo "string";
+} 
+
+if(isset($_POST['submit']))
+{
+$f_id=$_SESSION['f_id'];
+$f_bio=$_POST['f_bio'];
+$f_resume=$_POST['f_resume'];
+
+$target = "images/demo/fprofile/".basename($_FILES['image']['name']);
+$image = $_FILES['image']['name'];
+$sql = "UPDATE freelancers SET f_image='$image' WHERE f_id='$f_id'" ;
+
+if ($conn->query($sql) === TRUE)
+{ 
+ @move_uploaded_file($_FILES['image']['tmp_name'] , $target);
+ $_SESSION['f_image'] = $image;
+}
+else 
+    echo "Error: " . $sql . "<br>" . $conn->error;
+
+header('Location:f_setting_picture.php');
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -58,8 +87,8 @@ include 'sessionf.php';
 <div class="wrapper row2" style="background-image:url('images/demo/backgrounds/06.jpg');">
 
 <div class="wrapper row5" style="max-width: 300px;float: right; margin-right: 100px;margin-top:100px;border-radius: 3px;border-left:solid #A3D044 10px;font-family: Allerta;font-size: 22px;color:#A3D044;background:white;">
-<a href="f_setting.php" style="color:black;background:#DADFE1;"><div style="background:#DADFE1;text-align: center;padding: 20px;">GENERAL</div></a>
-<a href="f_setting_picture.php" style="color:#A3D044;background:black;"><div style="padding: 20px;" >POFILE PICTURE</div></a>
+<a href="f_setting.php" style="color:#A3D044;background:black;"><div style="padding: 20px;" >GENERAL</div></a>
+<a href="f_setting_picture.php" style="color:black;background:#DADFE1;"><div style="background:#DADFE1;text-align: center;padding: 20px;">PROFILE PICTURE</div></a>
 <a href="f_setting_bio.php" style="color:#A3D044;background:black;"><div style="padding: 20px;" >BIO</div></a>
 <a href="f_setting_resume.php" style="color:#A3D044;background:black;"><div style="padding: 20px;" >UPLOAD RESUME</div></a>
 </div>
@@ -70,8 +99,8 @@ include 'sessionf.php';
  <br>
  <div style="margin-left: 100px;border-radius: 10px;border :solid #A3D044 3px; background: white; color:black;max-width: 500px;position: relative;top: 30px;"><br>
     
-      <h1 style="font-size: 40px;background: #A3D044;">GENERAL</h1>
-      <form action="f_setting.php" method="post" style="margin-left: 30px">
+      <h1 style="font-size: 40px;background: #A3D044;">PROFILE PICTURE</h1>
+      <form action="f_setting_picture.php" method="post" enctype="multipart/form-data" style="margin-left: 30px" >
 
 <?php  
 include 'config.php';
@@ -80,51 +109,22 @@ $sql="SELECT * FROM freelancers WHERE f_id='$f_id'";
 $result=mysqli_query($conn,$sql);
 $row=mysqli_fetch_assoc($result);
 ?>
+        <img src="images/demo/fprofile/<?php echo $row['f_image'];?>" style="width: 200px;padding: 5px;height: 200px;border: solid #A3D044 1px;border-bottom: solid #A3D044 6px" >
+        <input type="hidden" name="f_bio" value="<?php echo $row['f_bio'];?>">
+        <input type="hidden" name="f_resume" value="<?php echo $row['f_resume'];?>">
 
-
-        <label style="color: #A3D044;position: relative;left: -190px;margin-bottom: 20px;">Name :</label>
-        <div class="one_half first">
-        <input type="text" name="fname" size="20" value="<?php echo $row['f_fname'];?>" style="text-align: center;border:none;border-bottom: solid #A3D044 2px;" required>
-        </div>
-        <div class="one_half">
-        <input type="text" name="lname" size="20" value="<?php echo $row['f_lname'];?>" style="text-align: center;border:none;border-bottom: solid #A3D044 2px;" required><br>
-        </div>
-  
-        <br><label style="color: #A3D044;position: relative;left: -190px">Email :</label>
-        <label style="color: #A3D044;position: relative;top: -25px;left:70px;">Phone :</label>
-
-        <div class="one_half first">
-        <input type="email" name="email" size="20" value="<?php echo $row['f_email'];?>" style="position: relative;top: -15px ;text-align: center;border:none;border-bottom: solid #A3D044 2px;" required><br>
-        </div>
-        <div class="one_half">
-        <input type="longnumber" name="number" size="20"  value="<?php echo $row['f_number'];?>" style="position: relative;top: -15px ;text-align: center;border:none;border-bottom: solid #A3D044 2px;" required><br>
-        </div>
-
-
-
-        <label style="color: #A3D044;position: relative;left: -185px">Gender :</label>
-        <label style="color: #A3D044;position: relative;top: -25px;left:70px;">Age :</label>
-
-        <div class="one_half first">
-          <select name ="gender" style="position: relative;top: -15px ;text-align:center;border:none;border-bottom: solid #A3D044 2px;color: black;width:170px;" required>
-            <option value="">--- select gender ---</option>
-            <option value="male" <?php if($row['f_gender']=='male'){echo "selected";}?>>Male</option>
-            <option value="female" <?php if($row['f_gender']=='female'){echo "selected";}?>>Female</option>
-          </select>
-        </div>
-        <div class="one_half">
-        <input type="number" name="age" min="1" max="100  " size="30" value="<?php echo $row['f_age'];?>" style="position: relative;top: -15px ;text-align: center;border:none;border-bottom: solid #A3D044 2px;" required><br>
-        </div>
-
-
-
-
-        <br><br><input style="background:#A3D044 ;border-radius:3px; color:black;padding:5px;padding-right:30px ;padding-left: 30px" type="submit" name="submit" value="UPDATE"><br><br>
+        <label style="color: #A3D044;position: relative;left: -175px;top:10px;margin-top: 35px;">Update picture:<br><br></label>
+        <input type="hidden" name="MAX_FILE_SIZE" value="10000000">
+        <input style="float: right;position: relative;cursor: pointer;top: -40px;margin-right: 50px;color: #A3D044;" type="file" name="image" required /><br>
+        <!-- 
+        <br><br><input style="float: right;margin-right:30px;background:#c0392b;border-radius:5px; color:black;padding:5px;padding-right:30px ;padding-left: 30px;cursor: pointer;" type="submit" name="remove" value="REMOVE">
+         -->
+        <input style="background:#A3D044 ;border-radius:5px; color:black;padding:5px;padding-right:30px ;padding-left: 30px;cursor: pointer;" type="submit" name="submit" value="UPDATE"><br><br>
 
       </form>
 
   </div>
-<br><br><br><br>
+<br><br><br>
 
   </div>
 </div>
@@ -135,44 +135,3 @@ $row=mysqli_fetch_assoc($result);
 <script src="layout/scripts/jquery.mobilemenu.js"></script>
 </body>
 </html>
-
-<?php
-include 'config.php';
-if($_SERVER["REQUEST_METHOD"]=="POST"){
-
-$fname=$_POST['fname'];
-$lname=$_POST['lname'];
-$email=$_POST['email'];
-$number=$_POST['number'];
-$gender=$_POST['gender'];
-$age=$_POST['age'];
-$f_id=$_SESSION['f_id'];
-$msg="";
-
-
-$sql = "UPDATE freelancers SET f_fname='$fname',f_lname='$lname', f_email='$email' ,f_number='$number',f_gender='$gender', f_age='$age' WHERE f_id='$f_id'" ;
-
-if ($conn->query($sql) === TRUE)
-{
-  $msg="Record updated successfully";
-  $_SESSION['f_fname']=$fname;
-
-?>
-<center><div id="fade" style="color: black;z-index: 2;background: #A3D044;max-width: 495px;position: relative;top: -320px;height:30px; text-align:center;padding-top:5px;"><?php echo $msg; ?> </div></center>
-<script>  
-setTimeout(function() {
-  $("#fade").fadeOut().empty();
-}, 1500);
-</script>
-
-<?php
-
-
-header('Location:f_post.php');
-}
-else 
-    echo "Error: " . $sql . "<br>" . $conn->error;
-
-header('Location:f_post.php');
-}
-?>

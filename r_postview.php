@@ -103,7 +103,6 @@ while($row2 = $result2->fetch_assoc()) {
 
 $f_id=$row2['f_id'];
 if ($row2['app']==='1') {
-
       $sql3="SELECT * FROM freelancers WHERE f_id='$f_id'";    
       $result3=mysqli_query($conn,$sql3);
       $row3=mysqli_fetch_assoc($result3);
@@ -116,7 +115,7 @@ if ($row2['app']==='1') {
   <td><?php echo $row3['f_gender'];?></td>
   <td><?php echo $row3['f_age'];?></td>
   <td><a href="" style="color: black"><i class="fa fa-eye" aria-hidden="true"></i></a></td>
-  <td><a href="r_reject.php?f_id=<?php echo $row3['f_id'];?>&j_id=<?php echo '1';?>" onclick="return confirm('Do you want to delete this record ?')" style="color: black"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+  <td><a href="r_reject.php?f_id=<?php echo $row3['f_id'];?>&j_id=<?php echo $j_id;?>" onclick="return confirm('Do you want to delete this record ?')" style="color: black"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
      
 
 </tr>

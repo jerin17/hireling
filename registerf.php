@@ -11,10 +11,15 @@ $password=$_POST['password'];
 $cpassword=$_POST['cpassword'];
 $msg="";
 
+$f_image="favatar.png";
+$f_bio="";
+$f_resume="";
+
+
 if($password==$cpassword)
 {
-    $sql = "INSERT INTO freelancers (f_fname,f_lname,f_email,f_number,f_gender,f_age, f_password)
-    VALUES ('$fname','$lname', '$email','$number','$gender','$age','$password')";
+    $sql = "INSERT INTO freelancers (f_fname,f_lname,f_email,f_number,f_gender,f_age, f_password,f_image,f_bio,f_resume)
+    VALUES ('$fname','$lname', '$email','$number','$gender','$age','$password','$f_image','$f_bio','$f_resume')";
 
     if ($conn->query($sql) === TRUE)
     {header('Location:loginf.php');}

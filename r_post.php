@@ -117,29 +117,3 @@ header('Location:r_dashboard.php');
 <script src="layout/scripts/jquery.mobilemenu.js"></script>
 </body>
 </html>
-<?php  
-include 'config.php';
-
-$fname=$_POST['fname'];
-$lname=$_POST['lname'];
-$email=$_POST['email'];
-$org=$_POST['org'];
-$r_id=$_SESSION['r_id'];
-
-
-$sql = "UPDATE recruiters SET r_fname='$fname',r_lname='$lname', r_email='$email' ,r_org='$org' WHERE r_id='$r_id'" ;
-
-if ($conn->query($sql) === TRUE)
-    echo "Record updated successfully";
- 
-else 
-    echo "Error: " . $sql . "<br>" . $conn->error;
-
-header('Location:r_dashboard.php');
-
-
-?>
-
-
-
-

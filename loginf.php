@@ -88,8 +88,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row=mysqli_fetch_assoc($result);
         $_SESSION['f_id'] = $row['f_id'];
         $_SESSION['f_fname'] = $row['f_fname'];
+        $_SESSION['f_image'] = $row['f_image'];
         $_SESSION['user'] = "f";
-
 
         header('Location:f_job.php');
         

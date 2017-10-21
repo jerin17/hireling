@@ -71,40 +71,30 @@ else {
       $username = $_SESSION['f_fname'];
       $redirect1="f_job.php";  
       $redirect2="f_setting.php";
-  }
+      $image=$_SESSION['f_image'];
+ }
   else
   {
       $username = $_SESSION['r_fname'];
       $redirect1="r_dashboard.php";
       $redirect2="r_setting.php";
+      $image=$_SESSION['r_image'];
   }
 
 ?>
 
-        <li><a href=<?php echo $redirect1; ?> style="color: #fbb217;"  >DASHBOARD</a></li>
-      
-        <li><a class="drop" href="" style="background: red;border-radius: 5px;color: white;padding: 13px;">
-          <?php echo $username; ?>
-        </a>
-          <ul>
-            <li><a href=<?php echo $redirect2; ?>>Settings</a></li>
-            <li><a href="logout.php">Logout</a></li>            
-          </ul>
-        </li>
-<!-- 
+        <li><a href=<?php echo $redirect1; ?> style="color: #fbb217;"  >DASHBOARD</a></li>      
         <li><a class="drop" href="" style="padding: 13px;">
-         <?php $photo=$_SESSION['r_image'];?>
-         <img src="logo/<?php echo $photo;?>" style="width: 40px;height: 40px;border-radius: 100px"> 
+         <img src="logo/<?php echo $image;?>" style="width: 40px;height: 40px;border-radius: 100px"> 
          
          </a>
           <ul>        
-            <li><a style="text-align: center;text-transform: uppercase;cursor: default;"><?php echo 'Welcome, '.$_SESSION['r_fname'];?></a></li>  
+            <li><a style="text-align: center;text-transform: uppercase;cursor: default;"><?php echo 'Welcome, '.$username;?></a></li>  
             <li><a href="r_setting.php">Settings</a></li>
             <li><a href="logout.php">Logout</a></li>
           </ul>
         </li>
 
- -->
 <?php
  }      
 ?>
@@ -209,7 +199,6 @@ else {
     <!-- ################################################################################################ -->
       <h1 class="font-x3 nospace"><b>Start freelancing</b></h1><br>
     <ul class="nospace group services">
-     
       <li class="one_third first btmspace-30">
         <article>
           <a href="#"><img src="images/demo/profile/avatar.png" style="background: white; width: 60px; height: 60px;margin-bottom: 20px;"></a>

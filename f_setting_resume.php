@@ -58,10 +58,10 @@ include 'sessionf.php';
 <div class="wrapper row2" style="background-image:url('images/demo/backgrounds/06.jpg');">
 
 <div class="wrapper row5" style="max-width: 300px;float: right; margin-right: 100px;margin-top:100px;border-radius: 3px;border-left:solid #A3D044 10px;font-family: Allerta;font-size: 22px;color:#A3D044;background:white;">
-<a href="f_setting.php" style="color:black;background:#DADFE1;"><div style="background:#DADFE1;text-align: center;padding: 20px;">GENERAL</div></a>
+<a href="f_setting.php" style="color:#A3D044;background:black;"><div style="padding: 20px;" >GENERAL</div></a>
 <a href="f_setting_picture.php" style="color:#A3D044;background:black;"><div style="padding: 20px;" >POFILE PICTURE</div></a>
 <a href="f_setting_bio.php" style="color:#A3D044;background:black;"><div style="padding: 20px;" >BIO</div></a>
-<a href="f_setting_resume.php" style="color:#A3D044;background:black;"><div style="padding: 20px;" >UPLOAD RESUME</div></a>
+<a href="f_setting_resume.php" style="color:black;background:#DADFE1;"><div style="background:#DADFE1;text-align: center;padding: 20px;">UPLOAD RESUME</div></a>
 </div>
 
 
@@ -70,7 +70,7 @@ include 'sessionf.php';
  <br>
  <div style="margin-left: 100px;border-radius: 10px;border :solid #A3D044 3px; background: white; color:black;max-width: 500px;position: relative;top: 30px;"><br>
     
-      <h1 style="font-size: 40px;background: #A3D044;">GENERAL</h1>
+      <h1 style="font-size: 40px;background: #A3D044;">UPDATE RESUME</h1>
       <form action="f_setting.php" method="post" style="margin-left: 30px">
 
 <?php  

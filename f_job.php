@@ -31,13 +31,18 @@ include 'sessionf.php';
       <p><a href="index.php" style="color: white">For free lancers and others</a></p>
     </div>
     <!-- ################################################################################################ -->
-    <nav id="mainav" class="fl_right">
+        <nav id="mainav" class="fl_right">
       <ul class="clear">
         <li><a href="index.php">Home</a></li>         
-        <li><a class="drop" href="" style="background: red;border-radius: 5px;color: white;padding: 13px;">
-          <?php echo $_SESSION['f_fname']; ?>
-        </a>
-          <ul>
+        <li><a href="f_job.php" style="color: #fbb217;"  >DASHBOARD</a></li>
+        <li><a class="drop" href="" style="padding: 13px;">
+
+         <?php $photo=$_SESSION['f_image'];?>
+         <img src="images/demo/fprofile/<?php echo $photo;?>" style="width: 40px;height: 40px;border-radius: 100px"> 
+         
+         </a>
+          <ul>        
+            <li><a style="text-align: center;text-transform: uppercase;cursor: default;"><?php echo 'Welcome, '.$_SESSION['f_fname'];?></a></li>  
             <li><a href="f_setting.php">Settings</a></li>
             <li><a href="logout.php">Logout</a></li>
           </ul>
@@ -45,7 +50,6 @@ include 'sessionf.php';
       
       </ul>
     </nav>
-
     <!-- ################################################################################################ -->
   </header>
 </div>
@@ -120,7 +124,7 @@ include 'sessionf.php';
           }
           
           else if ($reject==='2') {?>
-                <a><div style="font-family: fantasy;font-size: 15px;background:#c0392b; color: white;width: 130px;text-align: center;border-radius: 5px;float: right;padding: 5px;cursor: not-allowed;">Rejected</div></a><br>
+                <a><div style="font-family: fantasy;font-size: 15px;background:#c0392b; color: white;width: 130px;text-align: center;border-radius: 5px;float: right;padding: 5px;cursor: not-allowed;">not selected</div></a><br>
 
           <?php
           }
