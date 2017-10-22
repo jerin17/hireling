@@ -59,7 +59,7 @@ include 'sessionf.php';
 
 <div class="wrapper row5" style="max-width: 300px;float: right; margin-right: 100px;margin-top:100px;border-radius: 3px;border-left:solid #A3D044 10px;font-family: Allerta;font-size: 22px;color:#A3D044;background:white;">
 <a href="f_setting.php" style="color:#A3D044;background:black;"><div style="padding: 20px;" >GENERAL</div></a>
-<a href="f_setting_picture.php" style="color:#A3D044;background:black;"><div style="padding: 20px;" >POFILE PICTURE</div></a>
+<a href="f_setting_picture.php" style="color:#A3D044;background:black;"><div style="padding: 20px;" >PROFILE PICTURE</div></a>
 <a href="f_setting_bio.php" style="color:#A3D044;background:black;"><div style="padding: 20px;" >BIO</div></a>
 <a href="f_setting_resume.php" style="color:black;background:#DADFE1;"><div style="background:#DADFE1;text-align: center;padding: 20px;">UPLOAD RESUME</div></a>
 <?php  
@@ -71,7 +71,7 @@ $row=mysqli_fetch_assoc($result);
 $per=1;$wid=25;
 if ($row['f_bio']!="")
   $per++;
-if ($row['f_image']!="")
+if ($row['f_image']!="" && $row['f_image']!="favatar.png")
   $per++;
 if ($row['f_resume']!="")
   $per++;
@@ -114,6 +114,7 @@ if($file=="")
   {$temp=1;$file="no resume uploaded";}
 ?>
         <i class="fa fa-file-text-o"  style="font-size:150px;border-bottom: solid #A3D044 6px;margin-bottom: 4px;"></i>
+        <a href="f_remove_resume.php?f_id=<?php echo $row['f_id'];?>" style="position: relative;top: -120px;left: -15px;"><img src="x.png" style="width: 30px;"></a>
         
         <input type="hidden" name="f_bio" value="<?php echo $row['f_bio'];?>">
         <label><b><?php echo $file;?></b></label>

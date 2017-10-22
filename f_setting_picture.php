@@ -92,7 +92,7 @@ $row=mysqli_fetch_assoc($result);
 $per=1;$wid=25;
 if ($row['f_bio']!="")
   $per++;
-if ($row['f_image']!="")
+if ($row['f_image']!="" && $row['f_image']!="favatar.png")
   $per++;
 if ($row['f_resume']!="")
   $per++;
@@ -131,6 +131,7 @@ $result=mysqli_query($conn,$sql);
 $row=mysqli_fetch_assoc($result);
 ?>
         <img src="images/demo/fprofile/<?php echo $row['f_image'];?>" style="width: 200px;padding: 5px;height: 200px;border: solid #A3D044 1px;border-bottom: solid #A3D044 6px" >
+        <a href="f_remove_pic.php?f_id=<?php echo $row['f_id'];?>" style="position: relative;top: -100px;left: -15px;"><img src="x.png" style="width: 30px;"></a>
         <input type="hidden" name="f_bio" value="<?php echo $row['f_bio'];?>">
         <input type="hidden" name="f_resume" value="<?php echo $row['f_resume'];?>">
 

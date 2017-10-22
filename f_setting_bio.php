@@ -78,7 +78,7 @@ header('Location:f_setting.php');
 <div class="wrapper row5" style="max-width: 300px;float: right; margin-right: 100px;margin-top:100px;border-radius: 3px;border-left:solid #A3D044 10px;font-family: Allerta;font-size: 22px;color:#A3D044;background:white;">
 
 <a href="f_setting.php" style="color:#A3D044;background:black;"><div style="padding: 20px;" >GENERAL</div></a>
-<a href="f_setting_picture.php" style="color:#A3D044;background:black;"><div style="padding: 20px;" >POFILE PICTURE</div></a>
+<a href="f_setting_picture.php" style="color:#A3D044;background:black;"><div style="padding: 20px;" >PROFILE PICTURE</div></a>
 <a href="f_setting_bio.php" style="color:black;background:#DADFE1;"><div style="background:#DADFE1;text-align: center;padding: 20px;">BIO</div></a><a href="f_setting_resume.php" style="color:#A3D044;background:black;"><div style="padding: 20px;" >UPLOAD RESUME</div></a>
 <?php  
 include 'config.php';
@@ -89,7 +89,7 @@ $row=mysqli_fetch_assoc($result);
 $per=1;$wid=25;
 if ($row['f_bio']!="")
   $per++;
-if ($row['f_image']!="")
+if ($row['f_image']!="" && $row['f_image']!="favatar.png")
   $per++;
 if ($row['f_resume']!="")
   $per++;
