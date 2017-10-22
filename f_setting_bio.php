@@ -17,7 +17,7 @@ if ($conn->query($sql) === TRUE)
 else 
     echo "Error: " . $sql . "<br>" . $conn->error;
 
-header('Location:f_setting_bio.php');
+header('Location:f_setting.php');
 }
 ?>
 <!DOCTYPE html>
@@ -106,9 +106,9 @@ $row=mysqli_fetch_assoc($result);
 
         </div><br><br>
 
-        <input style="float: right;margin-right:30px;background:#e67e22;border-radius:5px; color:black;padding:5px;padding-right:30px ;padding-left: 30px;cursor: pointer;" type="reset" name="reset" value="RESET">
+        <input style="float: right;margin-right:30px;background:#A3D044;border-radius:5px; color:black;padding:5px;padding-right:30px ;padding-left: 30px;cursor: pointer;" type="reset" name="reset" value="RESET">
         
-        <input style="background:#A3D044 ;border-radius:3px; color:black;padding:5px;padding-right:30px ;padding-left: 30px" type="submit" name="submit" value="UPDATE"><br>
+        <input style="background:#A3D044 ;border-radius:3px; color:black;padding:5px;padding-right:30px ;padding-left: 30px;cursor: pointer;" type="submit" name="submit" value="UPDATE"><br>
 
       </form>
 
