@@ -2,31 +2,22 @@
 session_start();
 include 'sessionr.php';
 include 'config.php';
+if($_SERVER["REQUEST_METHOD"]=="POST"){
 
-if($_SERVER["REQUEST_METHOD"]=="POST")
-{
-$fname=$_POST['fname'];
-$lname=$_POST['lname'];
-$email=$_POST['email'];
-$org=$_POST['org'];
+$r_bio=$_POST['bio'];
 $r_id=$_SESSION['r_id'];
 
-$sql = "UPDATE recruiters SET r_fname='$fname',r_lname='$lname', r_email='$email' ,r_org='$org' WHERE r_id='$r_id'" ;
+
+$sql = "UPDATE recruiters SET r_bio='$r_bio'WHERE r_id='$r_id'" ;
 
 if ($conn->query($sql) === TRUE)
-{    echo "Record updated successfully";
-     $_SESSION['r_fname']=$fname;
-     $_SESSION['r_org']=$org;
-}
- 
+  echo $msg="Record updated successfully";
 else 
     echo "Error: " . $sql . "<br>" . $conn->error;
 
-header('Location:r_setting.php');
+header('Location:r_setting_bio.php');
 }
 ?>
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -79,9 +70,9 @@ header('Location:r_setting.php');
 <div class="wrapper row2" style="background-image:url('images/demo/backgrounds/06.jpg');">
 
 <div class="wrapper row5" style="max-width: 300px;float: right; margin-right: 100px;margin-top:100px;border-radius: 3px;border-left:solid #A3D044 10px;font-family: Allerta;font-size: 22px;color:#A3D044;background:white;">
-<a href="r_setting.php" style="color:black;background:#DADFE1;"><div style="background:#DADFE1;text-align: center;padding: 20px;">GENERAL</div></a>
+<a href="r_setting.php" style="color:#A3D044;background:black;"><div style="padding: 20px;" >GENERAL</div></a>
 <a href="r_setting_picture.php" style="color:#A3D044;background:black;"><div style="padding: 20px;" >COMPANY LOGO</div></a>
-<a href="r_setting_bio.php" style="color:#A3D044;background:black;"><div style="padding: 20px;" >COMPANY BIO</div></a>
+<a href="r_setting_bio.php" style="color:black;background:#DADFE1;"><div style="background:#DADFE1;text-align: center;padding: 20px;">COMPANY BIO</div></a>
 </div>
 
 
@@ -90,8 +81,8 @@ header('Location:r_setting.php');
  <br>
  <div style="margin-left: 100px;border-radius: 10px;border :solid #A3D044 3px; background: white; color:black;max-width: 500px;position: relative;top: 30px;"><br>
     
-      <h1 style="font-size: 40px;background: #A3D044;">GENERAL</h1>
-      <form action="r_setting.php" method="post" enctype="multipart/form-data" style="margin-left: 30px">
+      <h1 style="font-size: 40px;background: #A3D044;">COMPANY BIO</h1>
+      <form action="r_setting_bio.php" method="post" style="margin-left: 30px">
 
 <?php  
 include 'config.php';
@@ -101,22 +92,16 @@ $result=mysqli_query($conn,$sql);
 $row=mysqli_fetch_assoc($result);
 ?>
 
-        <label style="color: #A3D044;position: relative;left: -190px;">Name :</label>
-        <div class="one_half first">
-        <input type="text" name="fname" size="20" value="<?php echo $row['r_fname'];?>" style="text-align: center;border:none;border-bottom: solid #A3D044 2px;" required>
-        </div>
-        <div class="one_half">
-        <input type="text" name="lname" size="20" value="<?php echo $row['r_lname'];?>" style="text-align: center;border:none;border-bottom: solid #A3D044 2px;" required><br><br>
-        </div>
 
-        <label style="color: #A3D044;position: relative;left: -165px;margin-top: 20px;">Email Address:</label>
-        <input type="email" name="email" size="52" value="<?php echo $row['r_email'];?>" style="text-align: center;border:none;border-bottom: solid #A3D044 2px;" required><br><br>
+        <label style="color: #A3D044;position: relative;left: -175px;margin-bottom: 20px;">Describe Yourself :</label>
+        <div>
+        <textarea name="bio" placeholder="Tell the recruiter about yourself !" style="width:435px;height: 200px;border: none;border:solid #A3D044 2px;"><?php echo $row['r_bio'];?></textarea>  
+
+        </div><br><br>
+
+        <input style="float: right;margin-right:30px;background:#A3D044;border-radius:5px; color:black;padding:5px;padding-right:30px ;padding-left: 30px;cursor: pointer;" type="reset" name="reset" value="RESET">
         
-        <label style="color: #A3D044;position: relative;left: -150px">Organisation Name  :</label>
-        <input type="text" name="org" size="52" value="<?php echo $row['r_org'];?>" style="text-align: center;border:none;border-bottom: solid #A3D044 2px;" required><br>
-
-    
-        <br><input style="background:#A3D044 ;border-radius:3px; color:black;padding:5px;padding-right:30px ;padding-left: 30px" type="submit" name="submit" value="UPDATE"><br>
+        <input style="background:#A3D044 ;border-radius:3px; color:black;padding:5px;padding-right:30px ;padding-left: 30px;cursor: pointer;" type="submit" name="submit" value="UPDATE"><br>
 
       </form>
 

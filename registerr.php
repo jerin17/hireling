@@ -16,7 +16,7 @@ if($password==$cpassword)
 $target = "logo/".basename($_FILES['image']['name']);
 $image = $_FILES['image']['name'];
 
-if ($image==="") {$image="avatar.png";}
+if ($image==="") {$image="ravatar.jpg";}
 
 $sql = "INSERT INTO recruiters (r_fname,r_lname,r_email,r_org, r_password,r_image)
 VALUES ('$fname','$lname', '$email','$org','$password','$image')";
