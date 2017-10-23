@@ -75,15 +75,15 @@ else {
   }
 ?>
 
-        <li><a href=<?php echo $redirect1; ?> style="color: #fbb217;"  >DASHBOARD</a></li>      
+        <li><a href=<?php echo $redirect1; ?> style="color: #fbb217;">DASHBOARD</a></li>      
         <li><a class="drop" href="" style="padding: 13px;">
          <img src="<?php echo $image;?>" style="width: 40px;height: 40px;border-radius: 100px"> 
          
          </a>
           <ul>        
             <li><a style="text-align: center;text-transform: uppercase;cursor: default;"><?php echo 'Welcome, '.$username;?></a></li>  
-            <li><a href="r_setting.php">Settings</a></li>
-            <li><a href="logout.php">Logout</a></li>
+            <li><a href=<?php echo $redirect2; ?>>SETTINGS</a></li>      
+            <li><a href="logout.php">LOGOUT</a></li>      
           </ul>
         </li>
 
