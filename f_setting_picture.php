@@ -54,7 +54,7 @@ header('Location:f_setting_picture.php');
         <nav id="mainav" class="fl_right">
       <ul class="clear">
         <li><a href="index.php">Home</a></li>         
-        <li><a href="f_job.php" style="color: #fbb217;"  >DASHBOARD</a></li>
+        <li><a href="f_dashboard.php" style="color: #fbb217;"  >DASHBOARD</a></li>
         <li><a class="drop" href="" style="padding: 13px;">
 
          <?php $photo=$_SESSION['f_image'];?>

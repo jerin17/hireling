@@ -34,7 +34,7 @@ include 'sessionf.php';
         <nav id="mainav" class="fl_right">
       <ul class="clear">
         <li><a href="index.php">Home</a></li>         
-        <li><a href="f_job.php" style="color: #fbb217;"  >DASHBOARD</a></li>
+        <li><a href="f_dashboard.php" style="color: #fbb217;"  >DASHBOARD</a></li>
         <li><a class="drop" href="" style="padding: 13px;">
 
          <?php $f_image=$_SESSION['f_image'];?>

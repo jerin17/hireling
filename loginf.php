@@ -91,7 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['f_image'] = $row['f_image'];
         $_SESSION['user'] = "f";
 
-        header('Location:f_job.php');
+        header('Location:f_dashboard.php');
         
     }
   else{

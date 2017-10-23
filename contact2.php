@@ -64,7 +64,7 @@ else {
   $username = $_SESSION['f_fname'];
 ?>
 
-        <li><a href="f_job.php" style="color: #fbb217;">DASHBOARD</a></li>
+        <li><a href="f_dashboard.php" style="color: #fbb217;">DASHBOARD</a></li>
         <li><a class="drop" href="" style="background: red;border-radius: 5px;color: white;padding: 13px;">
           <?php echo $_SESSION['f_fname']; ?>
         </a>

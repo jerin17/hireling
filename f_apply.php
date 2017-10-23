@@ -14,5 +14,5 @@ if ($conn->query($sql) === TRUE)
 else 
     echo "Error: " . $sql . "<br>" . $conn->error;
 
-header('Location:f_job.php');
+header('Location:f_dashboard.php');
 ?>

@@ -57,7 +57,7 @@ else {
   if($user=="f")
   {
       $username = $_SESSION['f_fname'];
-      $redirect1="f_job.php";  
+      $redirect1="f_dashboard.php";  
       $redirect2="f_setting.php";
   }
   else

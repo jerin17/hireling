@@ -33,7 +33,6 @@
 <!-- 
         <li><a href="loginf.php" style="background: #A3D044;color: white;padding: 13px;">Free lancer Login</a></li>
         <li><a href="loginr.php" style="background: #A3D044;color: white;padding: 13px;">Recruiter Login</a></li>
-
  -->               
         
 
@@ -58,34 +57,27 @@ if(!isset($_SESSION['user'])){
 
 <?php
 }
-
-
-
-
 else {
-
   $user=$_SESSION['user'];
-
   if($user=="f")
   {
       $username = $_SESSION['f_fname'];
-      $redirect1="f_job.php";  
+      $redirect1="f_dashboard.php";  
       $redirect2="f_setting.php";
-      $image=$_SESSION['f_image'];
+      $image='images/demo/fprofile/'.$_SESSION['f_image'];
  }
   else
   {
       $username = $_SESSION['r_fname'];
       $redirect1="r_dashboard.php";
       $redirect2="r_setting.php";
-      $image=$_SESSION['r_image'];
+      $image='logo/'.$_SESSION['r_image'];
   }
-
 ?>
 
         <li><a href=<?php echo $redirect1; ?> style="color: #fbb217;"  >DASHBOARD</a></li>      
         <li><a class="drop" href="" style="padding: 13px;">
-         <img src="logo/<?php echo $image;?>" style="width: 40px;height: 40px;border-radius: 100px"> 
+         <img src="<?php echo $image;?>" style="width: 40px;height: 40px;border-radius: 100px"> 
          
          </a>
           <ul>        
@@ -129,15 +121,12 @@ if(!isset($_SESSION['user'])){
       
 <?php 
 }
-
 else {
-
   $user=$_SESSION['user'];
-
   if($user=="f")
   {
       $username = $_SESSION['f_fname'];
-      $redirect1="f_job.php";  
+      $redirect1="f_dashboard.php";  
       $redirect2="registerr.php";
   }
   else
@@ -146,7 +135,6 @@ else {
       $redirect1="registerf.php";
       $redirect2="r_post.php";
   }
-
 ?>
           <li><a class="btn inverse" href=<?php echo $redirect1; ?> >Become a freelancer</a></li>
           <li><a class="btn" href=<?php echo $redirect2; ?> >Post a Job</a></li>
@@ -206,21 +194,18 @@ else {
           <p><i>Web developer / $3000</i></p>
         </article>
       </li>
-
       <li class="one_third btmspace-30">
         <article><a href="#"><img src="images/demo/profile/avatar.png" style="background: white; width: 60px; height: 60px;margin-bottom: 20px;"></a>
           <h6>Google</h6>
           <p><i>Web developer / $3000</i></p>
         </article>
       </li>
-
       <li class="one_third btmspace-30">
         <article><a href="#"><img src="images/demo/profile/avatar.png" style="background: white; width: 60px; height: 60px;margin-bottom: 20px;"></a>
           <h6>Google</h6>
           <p><i>Web developer / $3000</i></p>
         </article>
       </li>
-
       <li class="one_third first">
         <article><a href="#"><img src="images/demo/profile/avatar.png" style="background: white; width: 60px; height: 60px;margin-bottom: 20px;"></a>
           <h6>Google</h6>
@@ -248,7 +233,6 @@ else {
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-
     <section id="about">
 <div class="wrapper row3" style="font-family: courier">
   <section class="hoc container clear"> 
@@ -261,32 +245,26 @@ else {
     </div>
     
       <center><h3 class="font-x2 nospace" style="font-family: times;"><b>TEAM</b></h3></center><br>
-
     <div class="group">
-
     <article class="one_third first" style="text-align: center;">
     <img class="btmspace-30" src="images/demo/about/contact1.jpg" alt="" style="width: 150px;border-bottom: solid #A3D044 5px;">
       <h3 class="heading">Josu Jacob</h3>
         <p>Jamia Hamdard University <br> B.tech(CSE),final year </p>
     </article>
-
     <article class="one_third" style="text-align: center;">
     <img class="btmspace-30" src="images/demo/about/contact2.jpg" alt="" style="width: 150px;border-bottom: solid #A3D044 5px;">
       <h3 class="heading">Jerin Thomas</h3>
         <p>Jamia Hamdard University <br> B.tech(CSE),final year </p>
     </article>
-
     <article class="one_third" style="text-align: center;">
     <img class="btmspace-30" src="images/demo/about/contact3.jpg" alt="" style="width: 150px;border-bottom: solid #A3D044 5px;">
       <h3 class="heading">Safin Chowdhury</h3>
         <p>Jamia Hamdard University <br> B.tech(CSE),final year </p>
     </article>
-
     </div>
     <!-- ################################################################################################ -->
   </section>
 </div>
-
 <div class="wrapper bgded overlay" style="background-image:url('images/demo/gallery/contactus1.jpg');">
   <article class="hoc container clear"> 
     <!-- ################################################################################################ -->
@@ -296,8 +274,6 @@ else {
     <!-- ################################################################################################ -->
   </article>
 </div>
-
-
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
@@ -328,7 +304,6 @@ else {
         <li><i class="fa fa-envelope-o"></i> info@hireling.com</li>
       </ul>
     </div>
-
     <div style="display: flex;"><iframe height="300" src="https://www.mapsdirections.info/en/custom-google-maps/map.php?width=100%&height=300&hl=ru&q=Jamia%20Hamdard%2C%20Hamdard%20Nagar+(Hireling)&ie=UTF8&t=&z=15&iwloc=A&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.mapsdirections.info/en/custom-google-maps/">Create Google Map</a> by <a href="https://www.mapsdirections.info/en/">Measure area on map</a></iframe></div><br />
     
     <!-- ################################################################################################ -->
@@ -355,4 +330,4 @@ else {
 <script src="layout/scripts/jquery.backtotop.js"></script>
 <script src="layout/scripts/jquery.mobilemenu.js"></script>
 </body>
-</html> -d
+</html>
