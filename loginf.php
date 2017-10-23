@@ -1,4 +1,48 @@
-<!DOCTYPE html>
+<?php
+session_start();
+include 'config.php';
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+  $email = $_POST['email'];
+  $password = $_POST['password'];
+
+  $sql = "SELECT * FROM `freelancers` WHERE f_email='$email' AND f_password='$password'";
+    $result=mysqli_query($conn,$sql);
+    $count = mysqli_num_rows($result);
+  
+    if($count == 1){
+
+        $_SESSION['f_email'] = $email;
+          
+        $row=mysqli_fetch_assoc($result);
+        $_SESSION['f_id'] = $row['f_id'];
+        $_SESSION['f_fname'] = $row['f_fname'];
+        $_SESSION['f_image'] = $row['f_image'];
+        $_SESSION['user'] = "f";
+
+        header('Location:f_dashboard.php');
+        
+    }
+  else{
+        $msg = "Invalid Username/Password";
+
+?>
+
+<center><div id="fade" style="color: white;z-index: 2;background: #d35400;max-width: 490px;position: relative;top: -450px;height:30px; text-align:center;padding-top:5px;"> <?php echo $msg; ?> </div></center>
+<script>  
+setTimeout(function() {
+  $("#fade").fadeOut().empty();
+}, 2000);
+</script>
+
+
+
+<?php       
+}
+}
+?><!DOCTYPE html>
 <html>
 <head>
 <title>Hireling</title>
@@ -63,52 +107,3 @@
 <script src="layout/scripts/jquery.mobilemenu.js"></script>
 </body>
 </html>
-
-
-<?php
-session_start();
-session_destroy();
-session_start();
-include 'config.php';
-
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-  $email = $_POST['email'];
-  $password = $_POST['password'];
-
-  $sql = "SELECT * FROM `freelancers` WHERE f_email='$email' AND f_password='$password'";
-    $result=mysqli_query($conn,$sql);
-    $count = mysqli_num_rows($result);
-  
-    if($count == 1){
-
-        $_SESSION['f_email'] = $email;
-          
-        $row=mysqli_fetch_assoc($result);
-        $_SESSION['f_id'] = $row['f_id'];
-        $_SESSION['f_fname'] = $row['f_fname'];
-        $_SESSION['f_image'] = $row['f_image'];
-        $_SESSION['user'] = "f";
-
-        header('Location:f_dashboard.php');
-        
-    }
-  else{
-        $msg = "Invalid Username/Password";
-
-?>
-
-<center><div id="fade" style="color: white;z-index: 2;background: #d35400;max-width: 490px;position: relative;top: -450px;height:30px; text-align:center;padding-top:5px;"> <?php echo $msg; ?> </div></center>
-<script>  
-setTimeout(function() {
-  $("#fade").fadeOut().empty();
-}, 2000);
-</script>
-
-
-
-<?php       
-}
-}
-?>

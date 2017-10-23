@@ -53,7 +53,7 @@ include 'sessionf.php';
 </div>
 
 <div class="wrapper bgded overlay" >
-  <div style="background-image:url('images/demo/backgrounds/06.png');" align="center"> 
+  <div style="background-image:url('images/demo/backgrounds/06.png');min-height: 565px;" align="center"> 
   <br>
   <div style="border-left:solid #A3D044 7px;border-bottom:solid #A3D044 3px;border-right:solid #A3D044 7px; background: white; color:black;max-width: 900px;text-align: left;">
 
@@ -70,6 +70,12 @@ include 'sessionf.php';
          <div class="row2" style="margin: 20px;padding: 20px;border-radius: 20px;">
          
             <img src="images/demo/fprofile/<?php echo $photo;?>" style="width: 120px;height: 120px;float: right;border-bottom:solid #A3D044 5px;"> 
+            <div style="float: right;text-align: left;width: 350px;height: 132px;margin-left: 20px;margin-right: 30px;border-left: solid #A3D044 4px;padding: 10px;"> Bio : 
+            <a href="f_setting_bio.php" style="color: blue;">[edit]</a> 
+
+            <div style="margin-left: 15px;max-height: 90px;overflow: hidden;"><i style="margin-left: 30px;"><?php echo $row['f_bio']; ?></i></div>
+            </div>
+
             Freelancer ID<?php for($i=0; $i<=0; $i++){echo "&nbsp";}?>  :  <b>#<?php echo $row['f_id']; ?></b><br>
             Name <?php for($i=0; $i<=11; $i++){echo "&nbsp";}?>  :  <b style="text-transform: uppercase;"><?php echo $row['f_fname'].' '.$row['f_lname']; ?></b><br>
             Email ID <?php for($i=0; $i<=7; $i++){echo "&nbsp";}?>  :  <b><?php echo $row['f_email']; ?></b><br>
@@ -110,8 +116,8 @@ $r_id=$row3['r_id'];
 ?>
 <tr>
   <td><?php echo $count++; ?></td>
-  <td style="text-transform: uppercase;"><?php echo $row4['r_org'];?></td>
-  <td><?php echo $row3['j_type'];?></td>
+  <td><a href="view_org.php?r_id=<?php echo $row4['r_id'];?>" style="text-transform: uppercase;color: black;text-decoration: underline;"><?php echo $row4['r_org'];?></a></td>
+  <td><a href="view_job.php?j_id=<?php echo $row3['j_id'];?>" style="color: black;text-decoration: underline;"><?php echo $row3['j_type'];?></a></td>
   <td style="color: blue">applied</td>
 </tr>
 
@@ -139,8 +145,8 @@ $r_id=$row3['r_id'];
 ?>
 <tr>
   <td><?php echo $count++; ?></td>
-  <td style="text-transform: uppercase;"><?php echo $row4['r_org'];?></td>
-  <td><?php echo $row3['j_type'];?></td>
+  <td><a href="view_org.php?r_id=<?php echo $row4['r_id'];?>" style="text-transform: uppercase;color: black;text-decoration: underline;"><?php echo $row4['r_org'];?></a></td>
+  <td><a href="view_job.php?j_id=<?php echo $row3['j_id'];?>" style="text-transform: uppercase;color: black;text-decoration: underline;"><?php echo $row3['j_type'];?></a></td>
   <td style="color: #c0392b">not selected</td>
 </tr>
 
@@ -149,11 +155,6 @@ $r_id=$row3['r_id'];
 }}?>
 
 </table>
-
-
-
-
-
 
   </div>
 <br>

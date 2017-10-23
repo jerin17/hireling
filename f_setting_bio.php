@@ -6,8 +6,8 @@ include 'sessionf.php';
 include 'config.php';
 if($_SERVER["REQUEST_METHOD"]=="POST"){
 
-$f_bio=$_POST['bio'];
 $f_id=$_SESSION['f_id'];
+$f_bio = mysqli_real_escape_string($conn, $_POST['bio']);
 
 
 $sql = "UPDATE freelancers SET f_bio='$f_bio'WHERE f_id='$f_id'" ;
