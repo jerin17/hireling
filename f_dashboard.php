@@ -1,4 +1,4 @@
-  <?php  
+<?php  
 session_start();
 $f_id=$_SESSION['f_id'];
 include 'sessionf.php';
@@ -33,6 +33,46 @@ include 'sessionf.php';
     <nav id="mainav" class="fl_right">
       <ul class="clear">
         <li><a href="index.php">Home</a></li>         
+<?php 
+ include 'config.php';
+      $f_id=$_SESSION['f_id'];
+      $sql="SELECT * FROM freelancers WHERE f_id='$f_id'";
+      $result=mysqli_query($conn,$sql);
+      $row=mysqli_fetch_assoc($result);
+      $per=1;$wid=25;
+      if ($row['f_bio']!="")
+        $per++;
+      if ($row['f_image']!="" && $row['f_image']!="favatar.png")
+        $per++;
+      if ($row['f_resume']!="")
+        $per++;
+$notif=4-$per;
+?>
+
+       
+<?php  
+if($notif==1 ||$notif==2 ||$notif==3){
+?> 
+        <li><a href="f_job.php" style="color: #fbb217;">FREELANCE</a></li>
+        <li><a class="drop" href="" style="padding: 13px;">
+         <?php $photo=$_SESSION['f_image'];?>
+         <img src="images/demo/fprofile/<?php echo $photo;?>" style="width: 40px;height: 40px;border-radius: 100px"> 
+<div style="float: right;margin-right: 50px;position: relative;top: -10px;left: -10px;color:white;background:red;height:20px;width:20px;border-radius:100px;font-size:17px;"> &nbsp<?php echo $notif; ?> </div>        
+         
+         </a>
+          <ul>        
+            <li><a style="text-align: center;text-transform: uppercase;cursor: default;"><?php echo 'Welcome, '.$_SESSION['f_fname'];?></a></li>  
+            <li><a href="f_setting.php">Settings<div style="float: right;color:white;background:red;height:20px;width:20px;border-radius:100px;font-size:17px;"> &nbsp<?php echo $notif; ?></div></a></li>
+            <li><a href="logout.php">Logout</a></li>
+          </ul>
+
+
+        </li>
+
+<?php
+}
+if($notif==0){
+?>
         <li><a href="f_job.php" style="color: #fbb217;">FREELANCE</a></li>
         <li><a class="drop" href="" style="padding: 13px;">
          <?php $photo=$_SESSION['f_image'];?>
@@ -44,6 +84,13 @@ include 'sessionf.php';
             <li><a href="f_setting.php">Settings</a></li>
             <li><a href="logout.php">Logout</a></li>
           </ul>
+<?php  
+}     
+?>      
+      </ul>
+    </nav>
+    <!-- ################################################################################################ -->
+  </header>
         </li>
       
       </ul>

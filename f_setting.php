@@ -2,6 +2,7 @@
 session_start();
 include 'sessionf.php';
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,8 +11,6 @@ include 'sessionf.php';
 <link rel="icon" type="image/png" href="images/hlogo.png"> 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
-<link href='https://fonts.googleapis.com/css?family=Allerta' rel='stylesheet'>
-
 </head>
 <body id="top">
 <!-- ################################################################################################ -->
@@ -26,19 +25,59 @@ include 'sessionf.php';
   <header id="header" class="hoc clear"> 
     <!-- ################################################################################################ -->
     <div id="logo" class="fl_left">
-      <h1><a href="index.php" style="color: #A3D044;">Hireling</a></h1>
-      <!-- yellow - fbb217 -->
+      <h1><a href="index.php" style="color: #A3D044">Hireling</a></h1>
       <p><a href="index.php" style="color: white">For free lancers and others</a></p>
     </div>
     <!-- ################################################################################################ -->
-        <nav id="mainav" class="fl_right">
+    <nav id="mainav" class="fl_right">
       <ul class="clear">
         <li><a href="index.php">Home</a></li>         
-        <li><a href="f_dashboard.php" style="color: #fbb217;"  >DASHBOARD</a></li>
-        <li><a class="drop" href="" style="padding: 13px;">
+<?php 
+ include 'config.php';
+      $f_id=$_SESSION['f_id'];
+      $sql="SELECT * FROM freelancers WHERE f_id='$f_id'";
+      $result=mysqli_query($conn,$sql);
+      $row=mysqli_fetch_assoc($result);
+      $per=1;$wid=25;
+      if ($row['f_bio']!="")
+        $per++;
+      if ($row['f_image']!="" && $row['f_image']!="favatar.png")
+        $per++;
+      if ($row['f_resume']!="")
+        $per++;
+$notif=4-$per;
+?>
 
-         <?php $f_image=$_SESSION['f_image'];?>
-         <img src="images/demo/fprofile/<?php echo $f_image;?>" style="width: 40px;height: 40px;border-radius: 100px"> 
+       
+<?php  
+if($notif==1 ||$notif==2 ||$notif==3){
+?> 
+        <li><a href="f_job.php">FREELANCE</a></li>
+        <li><a href="f_dashboard.php" style="color: #fbb217;">DASHBOARD</a></li>
+        <li><a class="drop" href="" style="padding: 13px;">
+         <?php $photo=$_SESSION['f_image'];?>
+         <img src="images/demo/fprofile/<?php echo $photo;?>" style="width: 40px;height: 40px;border-radius: 100px"> 
+<div style="float: right;margin-right: 50px;position: relative;top: -10px;left: -10px;color:white;background:red;height:20px;width:20px;border-radius:100px;font-size:17px;"> &nbsp<?php echo $notif; ?> </div>        
+         
+         </a>
+          <ul>        
+            <li><a style="text-align: center;text-transform: uppercase;cursor: default;"><?php echo 'Welcome, '.$_SESSION['f_fname'];?></a></li>  
+            <li><a href="f_setting.php">Settings<div style="float: right;color:white;background:red;height:20px;width:20px;border-radius:100px;font-size:17px;"> &nbsp<?php echo $notif; ?></div></a></li>
+            <li><a href="logout.php">Logout</a></li>
+          </ul>
+
+
+        </li>
+
+<?php
+}
+if($notif==0){
+?>
+        <li><a href="f_job.php">FREELANCE</a></li>
+        <li><a href="f_dashboard.php" style="color: #fbb217;">DASHBOARD</a></li>
+        <li><a class="drop" href="" style="padding: 13px;">
+         <?php $photo=$_SESSION['f_image'];?>
+         <img src="images/demo/fprofile/<?php echo $photo;?>" style="width: 40px;height: 40px;border-radius: 100px"> 
          
          </a>
           <ul>        
@@ -46,8 +85,9 @@ include 'sessionf.php';
             <li><a href="f_setting.php">Settings</a></li>
             <li><a href="logout.php">Logout</a></li>
           </ul>
-        </li>
-      
+<?php  
+}     
+?>      
       </ul>
     </nav>
     <!-- ################################################################################################ -->
@@ -188,7 +228,7 @@ if ($conn->query($sql) === TRUE)
   $_SESSION['f_fname']=$fname;
 
 ?>
-<center><div id="fade" style="color: black;z-index: 2;background: #A3D044;max-width: 495px;position: relative;top: -320px;height:30px; text-align:center;padding-top:5px;"><?php echo $msg; ?> </div></center>
+<center><div id="fade" style="color: black;z-index: 2;background: #A3D044;max-width: 495px;position: relative;left:-140px;top: -100px;height:30px; text-align:center;padding-top:5px;"><?php echo $msg; ?> </div></center>
 <script>  
 setTimeout(function() {
   $("#fade").fadeOut().empty();

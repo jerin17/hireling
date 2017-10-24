@@ -75,23 +75,57 @@ else {
   }
 ?>
 
-        <li><a href=<?php echo $redirect1; ?> style="color: #fbb217;">DASHBOARD</a></li>      
+<?php 
+if(isset($_SESSION['f_id']))
+{ include 'config.php';
+      $f_id=$_SESSION['f_id'];
+      $sql="SELECT * FROM freelancers WHERE f_id='$f_id'";
+      $result=mysqli_query($conn,$sql);
+      $row=mysqli_fetch_assoc($result);
+      $per=1;$wid=25;
+      if ($row['f_bio']!="")
+        $per++;
+      if ($row['f_image']!="" && $row['f_image']!="favatar.png")
+        $per++;
+      if ($row['f_resume']!="")
+        $per++;
+$notif=4-$per;
+?>
+
+       
+<?php  
+if($notif==1 ||$notif==2 ||$notif==3){
+?> 
+<li><a href=<?php echo $redirect1; ?> style="color: #fbb217;">DASHBOARD</a></li>      
         <li><a class="drop" href="" style="padding: 13px;">
          <img src="<?php echo $image;?>" style="width: 40px;height: 40px;border-radius: 100px"> 
-         
+<div style="float: right;margin-right: 50px;position: relative;top: -10px;left: -10px;color:white;background:red;height:20px;width:20px;border-radius:100px;font-size:17px;"> &nbsp<?php echo $notif; ?> </div>        
          </a>
           <ul>        
             <li><a style="text-align: center;text-transform: uppercase;cursor: default;"><?php echo 'Welcome, '.$username;?></a></li>  
-            <li><a href=<?php echo $redirect2; ?>>SETTINGS</a></li>      
+          <li><a href=<?php echo $redirect2; ?>>SETTINGS<div style="float: right;color:white;background:red;height:20px;width:20px;border-radius:100px;font-size:17px;"> &nbsp<?php echo $notif; ?></div></a></li>  
+
             <li><a href="logout.php">LOGOUT</a></li>      
           </ul>
+<?php } ?>
         </li>
 
 <?php
- }      
+}
+if($user=="r" || $notif==0){
 ?>
-
-      
+ <li><a href=<?php echo $redirect1; ?> style="color: #fbb217;">DASHBOARD</a></li>      
+        <li><a class="drop" href="" style="padding: 13px;">
+         <img src="<?php echo $image;?>" style="width: 40px;height: 40px;border-radius: 100px"></a>
+          <ul>        
+            <li><a style="text-align: center;text-transform: uppercase;cursor: default;"><?php echo 'Welcome, '.$username;?></a></li>  
+            <li><a href=<?php echo $redirect2; ?>>SETTINGS</a></li>
+            <li><a href="logout.php">LOGOUT</a></li>      
+          </ul>
+<?php  
+}
+}     
+?>      
       </ul>
     </nav>
     <!-- ################################################################################################ -->
