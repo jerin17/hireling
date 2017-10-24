@@ -99,7 +99,7 @@ if($notif==1 ||$notif==2 ||$notif==3){
 <li><a href=<?php echo $redirect1; ?> style="color: #fbb217;">DASHBOARD</a></li>      
         <li><a class="drop" href="" style="padding: 13px;">
          <img src="<?php echo $image;?>" style="width: 40px;height: 40px;border-radius: 100px"> 
-<div style="float: right;margin-right: 50px;position: relative;top: -10px;left: -10px;color:white;background:red;height:20px;width:20px;border-radius:100px;font-size:17px;"> &nbsp<?php echo $notif; ?> </div>        
+<div style="float: right;margin-right: 50px;position: relative;top: -8px;left: -15px;color:white;background:red;height:20px;width:20px;border-radius:100px;font-size:17px;"> &nbsp<?php echo $notif; ?> </div>        
          </a>
           <ul>        
             <li><a style="text-align: center;text-transform: uppercase;cursor: default;"><?php echo 'Welcome, '.$username;?></a></li>  
