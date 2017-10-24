@@ -109,42 +109,38 @@ if($notif==0){
 
 
 <div class="wrapper row2" style="background-image:url('images/demo/backgrounds/06.jpg');">
-
-<div class="wrapper row5" style="max-width: 300px;float: right; margin-right: 100px;margin-top:100px;border-radius: 3px;border-left:solid #A3D044 10px;font-family: Allerta;font-size: 22px;color:#A3D044;background:white;">
-
-<a href="f_setting.php" style="color:#A3D044;background:black;"><div style="padding: 20px;" >GENERAL</div></a>
-<a href="f_setting_picture.php" style="color:#A3D044;background:black;"><div style="padding: 20px;" >PROFILE PICTURE</div></a>
-<a href="f_setting_bio.php" style="color:black;background:#DADFE1;"><div style="background:#DADFE1;text-align: center;padding: 20px;">BIO</div></a><a href="f_setting_resume.php" style="color:#A3D044;background:black;"><div style="padding: 20px;" >UPLOAD RESUME</div></a>
 <?php  
 include 'config.php';
 $f_id=$_SESSION['f_id'];
+$biocomp=0;
+$piccomp=0;
+$rescomp=0;
 $sql="SELECT * FROM freelancers WHERE f_id='$f_id'";
 $result=mysqli_query($conn,$sql);
 $row=mysqli_fetch_assoc($result);
 $per=1;$wid=25;
 if ($row['f_bio']!="")
-  $per++;
+ {$per++;$biocomp=1;}
 if ($row['f_image']!="" && $row['f_image']!="favatar.png")
-  $per++;
+ {$per++;$piccomp=1;}
 if ($row['f_resume']!="")
-  $per++;
-if($per==4)
- $wid=100;
-if($per==3)
- $wid=75;
-if($per==2)
- $wid=50;
-if($per==1)
- $wid=25;
-?>
+ {$per++;$rescomp=1;}
+ $wid=$per*25;
+ ?>
 
+
+<div class="wrapper row5" style="max-width: 300px;float: right; margin-right: 100px;margin-top:100px;border-radius: 3px;border-left:solid #A3D044 10px;font-family: Allerta;font-size: 22px;color:#A3D044;background:white;">
+
+<a href="f_setting.php" style="color:#A3D044;background:black;"><div style="padding: 20px;" >GENERAL <div style="float: right;"><?php echo ' &#10003';?></div></div></a>
+<a href="f_setting_picture.php" style="color:#A3D044;background:black;"><div style="padding: 20px;" >PROFILE PICTURE <div style="float: right;"><?php if($piccomp==1) echo ' &#10003';?></div></div></a>
+<a href="f_setting_bio.php" style="color:black;background:#DADFE1;"><div style="background:#DADFE1;text-align: center;padding: 20px;">BIO <div style="float: right;"><?php if($biocomp==1) echo ' &#10003';?></div></div></a>
+<a href="f_setting_resume.php" style="color:#A3D044;background:black;"><div style="padding: 20px;" >UPLOAD RESUME <div style="float: right;"><?php if($rescomp==1) echo ' &#10003';?></div></div></a>
 
 <div style="border:solid #A3D044 5px ;border-right: solid #A3D044 10px;text-align: center;">
   <div style=" width: <?php echo $wid;?>%;height: 40px;background-color: #3498db;"></div>
-<a style="color: black;background: white;font-size: 50%"><?php echo $wid;?>% profile complete</a>
+<a style="color: black;background: white;font-size: 50%"><<< <?php echo $wid;?>% profile complete >>></a>
 </div>
 </div>
-
 
   <div class="hoc center"> 
     <!-- ################################################################################################ -->
