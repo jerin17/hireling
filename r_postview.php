@@ -54,7 +54,7 @@ include 'sessionr.php';
 </div>
 
 <div class="wrapper bgded overlay" >
-  <div style="background-image:url('images/demo/backgrounds/06.png');" align="center"> 
+  <div style="background-image:url('images/demo/backgrounds/06.png');min-height: 565px;" align="center"> 
   <br>
   <div style="border-left:solid #A3D044 7px;border-bottom:solid #A3D044 3px;border-right:solid #A3D044 7px; background: white; color:black;max-width: 900px;text-align: left;">
 
@@ -91,7 +91,7 @@ include 'sessionr.php';
   <th>Ph Number</th>
   <th>Gender</th>
   <th>Age</th>
-  <th>View</th>
+  <th>View Profile</th>
   <th>Reject</th>
 </tr>
 
@@ -114,7 +114,7 @@ if ($row2['app']==='1') {
   <td><?php echo $row3['f_number'];?></td>
   <td><?php echo $row3['f_gender'];?></td>
   <td><?php echo $row3['f_age'];?></td>
-  <td><a href="" style="color: black"><i class="fa fa-eye" aria-hidden="true"></i></a></td>
+  <td><a href="view_freelancer.php?f_id=<?php echo $row3['f_id'];?>&j_id=<?php echo $j_id;?>" style="color: black"><i class="fa fa-eye" aria-hidden="true"></i></a></td>
   <td><a href="r_reject.php?f_id=<?php echo $row3['f_id'];?>&j_id=<?php echo $j_id;?>" onclick="return confirm('Do you want to delete this record ?')" style="color: black"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
      
 

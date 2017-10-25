@@ -164,8 +164,8 @@ $r_id=$row3['r_id'];
 <tr>
   <td><?php echo $count++; ?></td>
   <td><a href="view_org.php?r_id=<?php echo $row4['r_id'];?>" style="text-transform: uppercase;color: black;text-decoration: underline;"><?php echo $row4['r_org'];?></a></td>
-  <td><a href="view_job.php?j_id=<?php echo $row3['j_id'];?>" style="color: black;text-decoration: underline;"><?php echo $row3['j_type'];?></a></td>
-  <td style="color: blue">applied</td>
+    <td><?php echo $row3['j_type']; ?></td>
+<td style="color: blue">applied</td>
 </tr>
 
 <?php
@@ -193,7 +193,7 @@ $r_id=$row3['r_id'];
 <tr>
   <td><?php echo $count++; ?></td>
   <td><a href="view_org.php?r_id=<?php echo $row4['r_id'];?>" style="text-transform: uppercase;color: black;text-decoration: underline;"><?php echo $row4['r_org'];?></a></td>
-  <td><a href="view_job.php?j_id=<?php echo $row3['j_id'];?>" style="text-transform: uppercase;color: black;text-decoration: underline;"><?php echo $row3['j_type'];?></a></td>
+  <td><?php echo $row3['j_type']; ?></td>
   <td style="color: #c0392b">not selected</td>
 </tr>
 

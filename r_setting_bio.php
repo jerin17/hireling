@@ -4,7 +4,7 @@ include 'sessionr.php';
 include 'config.php';
 if($_SERVER["REQUEST_METHOD"]=="POST"){
 
-$r_bio=$_POST['bio'];
+$r_bio = mysqli_real_escape_string($conn, $_POST['bio']);
 $r_id=$_SESSION['r_id'];
 
 
