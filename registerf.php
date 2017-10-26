@@ -18,11 +18,25 @@ $f_resume="";
 
 if($password==$cpassword)
 {
+include 'config.php';
+$sql2="SELECT * FROM freelancers WHERE f_email='$email'";
+$result2=mysqli_query($conn, $sql2);
+$row2=mysqli_fetch_assoc($result2);
+
+if ($email!=$row2['f_email']) {
+
     $sql = "INSERT INTO freelancers (f_fname,f_lname,f_email,f_number,f_gender,f_age, f_password,f_image,f_bio,f_resume)
     VALUES ('$fname','$lname', '$email','$number','$gender','$age','$password','$f_image','$f_bio','$f_resume')";
 
     if ($conn->query($sql) === TRUE)
-    {header('Location:loginf.php');}
+    { $msg="";
+      header('Location:loginf.php');
+    }
+
+}
+else{
+    $msg="This email Id is already registered !";
+}
 }
 
 
@@ -30,12 +44,15 @@ if($password==$cpassword)
 else
   {
     $msg="The passwords don't match !";
+  }
+
+
     ?>
     <center><div id="fade" style="color: red;z-index: 7;max-height: 0px;max-width: 495px;position: relative;top: 220px;height:30px; text-align:center;padding-top:5px;"><?php echo $msg; ?> </div></center>
 <?php
   }
 
-}
+
 ?>
 <!DOCTYPE html>
 <html>
