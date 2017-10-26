@@ -16,12 +16,12 @@ include 'sessionf.php';
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
+<div class="wrapper row1"  style="position:fixed;z-index: 3;">
 <div class="wrapper row0">
 </div>
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper row1">
   <header id="header" class="hoc clear"> 
     <!-- ################################################################################################ -->
     <div id="logo" class="fl_left">
@@ -97,18 +97,16 @@ if($notif==0){
 <!-- ################################################################################################ -->
 
 
-<div class="wrapper row2" style="background-image:url('images/demo/backgrounds/06.jpg');">
+<div class="wrapper row2" style="background-image:url('images/demo/backgrounds/06.png');">
   <div class="hoc container clear"> 
     <!-- ################################################################################################ -->
 
 
-<!-- 
 <div style="background: white;border:solid #A3D044 2px;text-align: center; border-radius: 5px;padding: 20px;margin: 
 20px;width: 300px;float: right;">
       <h3 style="background: #A3D044;padding: 10px;padding-left: 30px;margin: -20px;border-radius: 3px;margin-bottom: 10px;">Side Bar</h3>
 </div>
 
- -->   
 
       <?php 
       include 'config.php';
@@ -128,7 +126,7 @@ if($notif==0){
         $r_image=$row2['r_image'];        
         ?>
 
-      <div style="background: white;border-radius: 10px;padding: 20px;margin:20px;max-width: 600px;">
+      <div style="background: white;border:solid black 1px;border-radius: 10px;padding: 20px;margin:20px;max-width: 600px;">
           <br><h1 style="background: #A3D044;padding: 10px;padding-left: 30px;margin: -20px;border-radius: 3px;margin-bottom: 10px;"><b><?php echo $row['j_id']; ?>. <?php echo $row['j_type']; ?></b></h1>
 
             <img src="logo/<?php echo $r_image;?>" style="margin-right: 15px;width: 60px;height: 60px;float: right;"> 

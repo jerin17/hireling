@@ -26,7 +26,8 @@
     <!-- ################################################################################################ -->
     <nav id="mainav" class="fl_right">
       <ul class="clear">
-        <li><a href="index.php">Home</a></li>         
+        <li><a href="#top">Home</a></li>         
+        <li><a href="#jobs">Jobs</a></li>         
         <li><a href="#about">About Us</a></li>
         <li><a href="contact.php">Write to us</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -183,39 +184,8 @@ else {
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
+<section id="jobs"></section>
 <div class="wrapper row2">
-  <div class="hoc container clear"> 
-    <!-- ################################################################################################ -->
-    <ul class="nospace group cta">
-      <center><h6 style="font-family: times;"><b>Whatever It Is, We Can Help</b></h6></center><br>
-
-      <li class="one_third first">
-        <article><strong class="numb">01</strong>
-          <h6 class="heading font-x1"><a href="" style="text-decoration: none;font-size: 20px">How it Works ?</a></h6><br>
-          <p>1. Post your project<br>2. Choose the perfect freelancer<br>3. Pay when you are satisfied!</p>
-        </article>
-      </li>
- 
-      <li class="one_third">
-        <article><strong class="numb">02</strong>
-          <h6 class="heading font-x1"><a href="" style="text-decoration: none;font-size: 20px">What kind of work can I get done?</a></h6><br>
-          <p>Small jobs, large jobs, anything in-between</p>
-        </article>
-      </li>
-      <li class="one_third">
-        <article><strong class="numb">03</strong>
-          <h6 class="heading font-x1"><a href="" style="text-decoration: none;font-size: 20px"">Get free quotes. It's quick and easy</a></h6>
-          <p>It only takes minutes to create new projects, get competitive quotes and choose your freelancer.</p>
-        </article>
-      </li>
-    </ul>
-    <!-- ################################################################################################ -->
-  </div>
-</div>
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<div class="wrapper row6">
   <main class="hoc container clear"> 
     <!-- main body -->
     <!-- ################################################################################################ -->
@@ -267,6 +237,38 @@ else {
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
+<div class="wrapper row4">
+  <div class="hoc container clear" style="min-height: 430px;"> 
+    <!-- ################################################################################################ -->
+    <ul class="nospace group cta">
+      <center><h6 style="font-family: times;color: white"><b>Whatever It Is, We Can Help</b></h6></center><br>
+
+      <li class="one_third first">
+        <article><strong  style="color: white" class="numb">01</strong>
+          <h6 class="heading font-x1"><a href="" style="text-decoration: none;font-size: 20px">How it Works ?</a></h6><br>
+          <p>1. Post your project<br>2. Choose the perfect freelancer<br>3. Pay when you are satisfied!</p>
+        </article>
+      </li>
+ 
+      <li class="one_third">
+        <article><strong style="color: white" class="numb">02</strong>
+          <h6 class="heading font-x1"><a href="" style="text-decoration: none;font-size: 20px">What kind of work can I get done?</a></h6><br>
+          <p>Small jobs, large jobs, anything in-between</p>
+        </article>
+      </li>
+      <li class="one_third">
+        <article><strong style="color: white" class="numb">03</strong>
+          <h6 class="heading font-x1"><a href="" style="text-decoration: none;font-size: 20px"">Get free quotes. It's quick and easy</a></h6>
+          <p>It only takes minutes to create new projects, get competitive quotes and choose your freelancer.</p>
+        </article>
+      </li>
+    </ul>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
     <section id="about">
 <div class="wrapper row3" style="font-family: courier">
   <section class="hoc container clear"> 
@@ -286,20 +288,20 @@ else {
         <p>Jamia Hamdard University <br> B.tech(CSE),final year </p>
     </article>
     <article class="one_third" style="text-align: center;">
-    <img class="btmspace-30" src="images/demo/about/contact2.jpg" alt="" style="width: 150px;border-bottom: solid #A3D044 5px;">
-      <h3 class="heading">Jerin Thomas</h3>
+    <img class="btmspace-30" src="images/demo/about/contact3.jpg" alt="" style="width: 150px;border-bottom: solid #A3D044 5px;">
+      <h3 class="heading">Safin Chowdhury</h3>
         <p>Jamia Hamdard University <br> B.tech(CSE),final year </p>
     </article>
     <article class="one_third" style="text-align: center;">
-    <img class="btmspace-30" src="images/demo/about/contact3.jpg" alt="" style="width: 150px;border-bottom: solid #A3D044 5px;">
-      <h3 class="heading">Safin Chowdhury</h3>
+    <img class="btmspace-30" src="images/demo/about/contact2.jpg" alt="" style="width: 150px;border-bottom: solid #A3D044 5px;">
+      <h3 class="heading">Jerin Thomas</h3>
         <p>Jamia Hamdard University <br> B.tech(CSE),final year </p>
     </article>
     </div>
     <!-- ################################################################################################ -->
   </section>
 </div>
-<div class="wrapper bgded overlay" style="background-image:url('images/demo/gallery/contactus1.jpg');">
+<div class="wrapper bgded overlay" style="background-image:url('images/demo/gallery/contactus1.jpg');min-height: 480px;">
   <article class="hoc container clear"> 
     <!-- ################################################################################################ -->
     <h2 class="font-x3">Got a Suggestion for Us?</h2>
@@ -349,7 +351,7 @@ else {
 <div class="wrapper row5">
   <div id="copyright" class="hoc clear"> 
     <!-- ################################################################################################ -->
-    <p class="fl_left">Copyright &copy; 2017 - All Rights Reserved - <a href="">Hireling.in</a></p>
+    <p class="fl_left">Copyright &copy; 2017 - All Rights Reserved - <a href="https://hireling.000webhostapp.com">hireling.000webhostapp.com</a></p>
     
     <!-- ################################################################################################ -->
   </div>
