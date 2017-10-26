@@ -73,21 +73,33 @@ include 'sessionr.php';
       <h1 style="font-size: 40px;background: #A3D044;text-align: center;font-family: monospace;"><?php echo $row['f_fname']." ".$row['f_lname'];?></h1>
          <div class="row2" style="margin: 20px;padding: 20px;border-radius: 20px;">
          
-            <img src="images/demo/fprofile/<?php echo $row['f_image'];?>" style="width: 120px;height: 120px;float: right;border-bottom:solid #A3D044 5px;"> 
-            <div style="float: right;text-align: left;width: 350px;height: 132px;margin-left: 20px;margin-right: 30px;border-left: solid #A3D044 4px;padding: 10px;"> Bio : 
-            <a href="f_setting_bio.php" style="color: blue;">[edit]</a> 
+            <img src="images/demo/fprofile/<?php echo $row['f_image'];?>" style="margin-left: 20px;width: 200px;height: 200px;float: left;border-right:solid #A3D044 5px;padding: 10px;margin-bottom: 20px;"> 
 
-            <div style="margin-left: 15px;max-height: 90px;overflow: hidden;"><i style="margin-left: 30px;"><?php echo $row['f_bio']; ?></i></div>
-            </div>
-
+          <div style="margin: 20px;margin-left: 50px;float: left;">
             Freelancer ID<?php for($i=0; $i<=0; $i++){echo "&nbsp";}?>  :  <b>#<?php echo $row['f_id']; ?></b><br>
             Name <?php for($i=0; $i<=11; $i++){echo "&nbsp";}?>  :  <b style="text-transform: uppercase;"><?php echo $row['f_fname'].' '.$row['f_lname']; ?></b><br>
             Email ID <?php for($i=0; $i<=7; $i++){echo "&nbsp";}?>  :  <b><?php echo $row['f_email']; ?></b><br>
             Phone <?php for($i=0; $i<=10; $i++){echo "&nbsp";}?>  :  <b><?php echo $row['f_number']; ?></b><br>
             Sex <?php for($i=0; $i<=14; $i++){echo "&nbsp";}?>  :  <b><?php echo $row['f_gender']; ?></b><br>
             Age <?php for($i=0; $i<=14; $i++){echo "&nbsp";}?>  :  <b><?php echo $row['f_age']; ?></b><br>
-            <a href="f_setting.php" style="color: blue">[edit]</a> 
-            <a href="f_setting_picture.php" style="color: blue;float: right;margin-right: 45px;">[edit]</a> 
+          </div>
+          <div style="float: right;margin: 15px;">
+        <i class="fa fa-file-text-o" style="font-size:150px;border-bottom: solid #A3D044 6px;margin-bottom: 4px;"></i>
+        <label style="text-align: center;"><b><?php echo $row['f_resume'];?></b></label>
+        <label style="text-align: center;"><?php if($row['f_resume']!=""){ ?><b><a href=images/demo/fresume/<?php echo $row['f_resume'];?>>download resume</a></b>  <?php } else {echo "No resume available";} ?></label>
+
+          </div>
+
+            <div style="width: 100%;padding: 10px;"><hr><b>Bio : </b>
+            <?php if($row['f_bio']=="") echo "<br><br>No bio available !"; 
+
+            else{ ?>
+            <div style="margin-left: 15px;"><i style="margin-left: 30px;"><?php echo $row['f_bio']; ?></i></div>
+            <?php
+            }
+            ?>
+            </div>
+
          </div>    
 
   </div>
