@@ -82,19 +82,18 @@ setTimeout(function() {
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper bgded overlay" style="background-image:url('images/demo/backgrounds/9.jpeg');">
-  <div align="center" style="padding: 120px"> 
+<div class="wrapper bgded overlay" style="background-image:url('images/demo/backgrounds/9.jpeg');min-height: 575px;">
+  <div align="center" style="padding: 20px;padding-top: 175px;padding-bottom: 70px;"> 
   
-  <div style="font-family: monospace;border :solid #A3D044 3px; background: white; color:black;max-width: 500px;"><br>
+  <div style="font-family: monospace;border :solid #A3D044 3px; background: white; color:black;max-width: 500px;min-width: 300px;"><br>
     
       <h1 style="font-size: 40px;background: #A3D044; font-family:monospace">FREE LANCER LOGIN</h1><br><br><br><br>
       <form action="loginf.php" method="post">
         <input type="email" name="email" size="30" placeholder="Enter email id" style="text-align: center;border:none;border-bottom: solid #A3D044 2px;" required><br><br><br>
-        <input type="password" name="password" size="30" placeholder="Enter password" style="text-align: center;border:none;border-bottom: solid #A3D044 2px;" required><br><br><br> 
+        <input type="password" name="password" size="30" placeholder="Enter password" style="text-align: center;border:none;border-bottom: solid #A3D044 2px;" required><br><br><br>
 
         <input style="background:#A3D044 ;border-radius:3px; color:black;padding:5px;padding-right:30px ;padding-left: 30px" type="submit" name="LOGIN"><br>
       </form>
-
   </div>
 
 

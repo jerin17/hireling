@@ -88,8 +88,8 @@ else {
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper bgded overlay" style="background-image:url('images/demo/gallery/contactus1.jpg');">
-  <div style="padding: 127px"> 
+<div class="wrapper bgded overlay" style="background-image:url('images/demo/gallery/contactus1.jpg');min-height: 650px;">
+  <div style="padding: 20px;padding-top: 150px;padding-bottom: 70px;"> 
   
   <div style="font-family: monospace;border :solid #A3D044 3px; background: white; color:black;max-width: 500px;position: relative;" align="center"><br>
     
@@ -97,15 +97,15 @@ else {
       <form action="contact2.php" method="post">
 
 
-        <label style="color: #A3D044;position: relative;left: -140px;margin-top: 20px;">Name :</label>
-        <input type="text" name="name" size="40" placeholder="name" style="text-align: center;border:none;border-bottom: solid #A3D044 2px;" required>
+        <label style="color: #A3D044;position: relative;left: -110px;margin-top: 20px;">Name :</label>
+        <input type="text" name="name" size="30" placeholder="name" style="text-align: center;border:none;border-bottom: solid #A3D044 2px;" required>
 
-        <label style="color: #A3D044;position: relative;left: -105px;margin-top: 20px;">Email Address:</label>
-        <input type="email" name="email" size="40" placeholder="email" style="text-align: center;border:none;border-bottom: solid #A3D044 2px;" required>
+        <label style="color: #A3D044;position: relative;left: -75px;margin-top: 20px;">Email Address:</label>
+        <input type="email" name="email" size="30" placeholder="email" style="text-align: center;border:none;border-bottom: solid #A3D044 2px;" required>
         
 
-        <label style="color: #A3D044;position: relative;left: -125px;margin-top: 20px;">Message :</label>
-        <textarea name="message" placeholder="enter your message" style="width:335px;height: 70px;border: none;border:solid #A3D044 2px;"></textarea>  
+        <label style="color: #A3D044;position: relative;left: -95px;margin-top: 20px;">Message :</label>
+        <textarea name="message" placeholder="enter your message" style="width:280px;height: 70px;border: none;border:solid #A3D044 2px;"></textarea>  
 
 
 

@@ -351,7 +351,7 @@ else {
 <div class="wrapper row5">
   <div id="copyright" class="hoc clear"> 
     <!-- ################################################################################################ -->
-    <p class="fl_left">Copyright &copy; 2017 - All Rights Reserved - <a href="https://hireling.000webhostapp.com">hireling.000webhostapp.com</a></p>
+    <p class="fl_left">Copyright &copy; 2017 - All Rights Reserved - <a href="http://hireling.ga/">hireling.ga</a></p>
     
     <!-- ################################################################################################ -->
   </div>
