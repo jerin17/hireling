@@ -30,7 +30,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 ?>
 
-<center><div id="fade" style="color: white;z-index: 2;background: #d35400;max-width: 490px;position: relative;top: -450px;height:30px; text-align:center;padding-top:5px;"> <?php echo $msg; ?> </div></center>
+<div id="fade" style="color: white;z-index: 2;background: #d35400;text-align:center;padding-top:5px;"> <?php echo $msg; ?> </div>
+
 <script>  
 setTimeout(function() {
   $("#fade").fadeOut().empty();
@@ -82,18 +83,24 @@ setTimeout(function() {
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper bgded overlay" style="background-image:url('images/demo/backgrounds/9.jpeg');min-height: 575px;">
-  <div align="center" style="padding: 20px;padding-top: 175px;padding-bottom: 70px;"> 
+<div class="wrapper bgded overlay" style="background-image:url('images/demo/backgrounds/9.jpg');min-height: 652px;">
+  <div align="center" style="padding: 20px;padding-top: 165px;padding-bottom: 30px;"> 
   
-  <div style="font-family: monospace;border :solid #A3D044 3px; background: white; color:black;max-width: 500px;min-width: 300px;"><br>
+  <div style="font-family: monospace;border :solid #A3D044 3px;border-radius:10px;background: rgba(0,0,0,0.5); color:black;max-width: 500px;min-width: 300px;"><br>
     
-      <h1 style="font-size: 40px;background: #A3D044; font-family:monospace">FREE LANCER LOGIN</h1><br><br><br><br>
+      <h1 style="font-size: 40px;background: #A3D044; font-family:monospace">FREE LANCER LOGIN</h1><br><br>
       <form action="loginf.php" method="post">
-        <input type="email" name="email" size="30" placeholder="Enter email id" style="text-align: center;border:none;border-bottom: solid #A3D044 2px;" required><br><br><br>
-        <input type="password" name="password" size="30" placeholder="Enter password" style="text-align: center;border:none;border-bottom: solid #A3D044 2px;" required><br><br><br>
+        <label style="color: white;margin-left: -180px;">Email ID</label>
+        <input type="email" name="email" size="30" placeholder="abc@example.com" style="border-radius: 5px;text-align: center;border:none;border-bottom: solid #A3D044 2px;padding: 5px;" required><br><br>
+        <label style="color: white;margin-left: -180px;">Password</label>        
+        <input type="password" name="password" size="30" placeholder="* * * * * * * * *" style="border-radius: 5px;text-align: center;border:none;border-bottom: solid #A3D044 2px;padding: 5px;" required><br><br>
 
-        <input style="background:#A3D044 ;border-radius:3px; color:black;padding:5px;padding-right:30px ;padding-left: 30px" type="submit" name="LOGIN"><br>
+        <input style="background:#A3D044 ;border-radius:3px; color:black;padding:5px;padding-right:30px ;padding-left: 30px;margin-bottom: 10px;" type="submit" name="LOGIN">
       </form>
+
+  <a href="" style="color: white;float: right;padding: 5px;margin: 5px;"><u>forgot password</u> ?</a>
+  <a href="registerf.php" style="color: white;float: left;padding: 5px;margin: 5px;"><u>not registered yet</u> ?</a>
+<br><br>
   </div>
 
 

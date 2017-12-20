@@ -258,7 +258,7 @@ else {
       </li>
       <li class="one_third">
         <article><strong style="color: white" class="numb">03</strong>
-          <h6 class="heading font-x1"><a href="" style="text-decoration: none;font-size: 20px"">Get free quotes. It's quick and easy</a></h6>
+          <h6 class="heading font-x1"><a href="" style="text-decoration: none;font-size: 20px">Get free quotes. It's quick and easy</a></h6>
           <p>It only takes minutes to create new projects, get competitive quotes and choose your freelancer.</p>
         </article>
       </li>

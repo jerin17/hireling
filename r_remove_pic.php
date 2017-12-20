@@ -2,7 +2,7 @@
 session_start();
 include 'config.php';
 $r_id=$_GET['r_id'];
-$image="ravatar.jpg";
+$image="ravatar.png";
 
 $sql = "UPDATE recruiters SET r_image='$image' WHERE r_id='$r_id'" ;
 if ($conn->query($sql) === TRUE)
