@@ -170,7 +170,7 @@ $row=mysqli_fetch_assoc($result);
 
         <label style="color: #A2D044;position: relative;left: -175px;top:10px;margin-top: 35px;">Update picture : <br><br></label>
         <input type="hidden" name="MAX_FILE_SIZE" value="10000000">
-        <input style="float: right;position: relative;cursor: pointer;top: -40px;margin-right: 50px;color: #A3D044;" type="file" name="image" required /><br>
+        <input style="float: right;position: relative;cursor: pointer;top: -40px;margin-right: 40px;color: #A3D044;" type="file" name="image" required /><br>
         <!-- 
         <br><br><input style="float: right;margin-right:30px;background:#c0392b;border-radius:5px; color:black;padding:5px;padding-right:30px ;padding-left: 30px;cursor: pointer;" type="submit" name="remove" value="REMOVE">
          -->

@@ -70,11 +70,11 @@ header('Location:r_setting_picture.php');
   </header>
 </div>
 
-<div class="wrapper row2" style="background-image:url('images/demo/backgrounds/06.jpg');">
+<div class="wrapper bgded overlay" style="background-image:url('images/demo/backgrounds/9.jpg');min-height: 565px;">
 
-<div class="wrapper row5" style="max-width: 300px;float: right; margin-right: 100px;margin-top:100px;border-radius: 3px;border-left:solid #A3D044 10px;font-family: Allerta;font-size: 22px;color:#A3D044;background:white;">
+<div class="wrapper row5" style="max-width: 300px;float: right; margin-right: 100px;margin-top:100px;border-radius: 3px;font-family: Allerta;font-size: 22px;color:#A3D044;background: rgba(0,0,0,0.5);border-radius: 5px;border-left:solid #A3D044 7px;">
 <a href="r_setting.php" style="color:#A3D044;background:black;"><div style="padding: 20px;" >GENERAL</div></a>
-<a href="r_setting_picture.php" style="color:black;background:#DADFE1;"><div style="background:#DADFE1;text-align: center;padding: 20px;">COMPANY LOGO</div></a>
+<a href="r_setting_picture.php" style="color:black;background:#A3D044;"><div style="background:#A3D044;text-align: center;padding: 20px;">COMPANY LOGO</div></a>
 <a href="r_setting_bio.php" style="color:#A3D044;background:black;"><div style="padding: 20px;" >COMPANY BIO</div></a>
 </div>
 
@@ -82,10 +82,10 @@ header('Location:r_setting_picture.php');
   <div class="hoc center"> 
     <!-- ################################################################################################ -->
  <br>
- <div style="margin-left: 100px;border-radius: 10px;border :solid #A3D044 3px; background: white; color:black;max-width: 500px;position: relative;top: 30px;"><br>
+ <div style="margin-left: 100px;border-radius: 10px;border :solid #A3D044 3px;background: rgba(0,0,0,0.5); color:black;max-width: 500px;position: relative;top: 30px;"><br>
     
       <h1 style="font-size: 40px;background: #A3D044;">COMPANY LOGO</h1>
-      <form action="r_setting_picture.php" method="post" enctype="multipart/form-data" style="margin-left: 30px" >
+      <form action="r_setting_bio.php" method="post" enctype="multipart/form-data" style="margin-left: 30px"><br>
 
 <?php  
 include 'config.php';
@@ -99,9 +99,9 @@ $row=mysqli_fetch_assoc($result);
         <input type="hidden" name="r_bio" value="<?php echo $row['f_bio'];?>">
         <input type="hidden" name="r_resume" value="<?php echo $row['f_resume'];?>">
 
-        <label style="color: #A3D044;position: relative;left: -175px;top:10px;margin-top: 35px;">Update picture:<br><br></label>
+        <label style="color: #A2D044;position: relative;left: -175px;top:10px;margin-top: 35px;">Update picture : <br><br></label>
         <input type="hidden" name="MAX_FILE_SIZE" value="10000000">
-        <input style="float: right;position: relative;cursor: pointer;top: -40px;margin-right: 50px;color: #A3D044;" type="file" name="image" required /><br>
+        <input style="float: right;position: relative;cursor: pointer;top: -40px;margin-right: 40px;color: #A3D044;" type="file" name="image" required /><br>
         <!-- 
         <br><br><input style="float: right;margin-right:30px;background:#c0392b;border-radius:5px; color:black;padding:5px;padding-right:30px ;padding-left: 30px;cursor: pointer;" type="submit" name="remove" value="REMOVE">
          -->
