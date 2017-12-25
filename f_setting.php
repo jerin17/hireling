@@ -94,8 +94,7 @@ if($notif==0){
   </header>
 </div>
 
-
-<div class="wrapper row2" style="background-image:url('images/demo/backgrounds/06.jpg');">
+<div class="wrapper bgded overlay" style="background-image:url('images/demo/backgrounds/9.jpg');min-height: 565px;">
 
 <?php  
 include 'config.php';
@@ -117,15 +116,15 @@ if ($row['f_resume']!="")
  ?>
 
 
-<div class="wrapper row5" style="max-width: 300px;float: right; margin-right: 100px;margin-top:100px;border-radius: 3px;border-left:solid #A3D044 10px;font-family: Allerta;font-size: 22px;color:#A3D044;background:white;">
-<a href="f_setting.php" style="color:black;background:#DADFE1;"><div style="background:#DADFE1;text-align: center;padding: 20px;">GENERAL <div style="float: right;"><?php echo ' &#10003';?></div></div></a>
+<div class="wrapper row5" style="max-width: 300px;float: right; margin-right: 100px;margin-top:100px;border-radius: 3px;font-family: Allerta;font-size: 22px;color:#A3D044;background: rgba(0,0,0,0.5);border-radius: 10px;">
+<a href="f_setting.php" style="color:black;background:#DADFE1;"><div style="background:#A3D044;text-align: center;padding: 20px;">GENERAL <div style="float: right;"><?php echo ' &#10003';?></div></div></a>
 <a href="f_setting_picture.php" style="color:#A3D044;background:black;"><div style="padding: 20px;" >PROFILE PICTURE <div style="float: right;"><?php if($piccomp==1) echo ' &#10003';?></div></div></a>
 <a href="f_setting_bio.php" style="color:#A3D044;background:black;"><div style="padding: 20px;" >BIO <div style="float: right;"><?php if($biocomp==1) echo ' &#10003';?></div></div></a>
 <a href="f_setting_resume.php" style="color:#A3D044;background:black;"><div style="padding: 20px;" >UPLOAD RESUME <div style="float: right;"><?php if($rescomp==1) echo ' &#10003';?></div></div></a>
 
-<div style="border:solid #A3D044 5px ;border-right: solid #A3D044 10px;text-align: center;">
+<div style="text-align: center;">
   <div style=" width: <?php echo $wid;?>%;height: 40px;background-color: #3498db;"></div>
-<a style="color: black;background: white;font-size: 50%"><<< <?php echo $wid;?>% profile complete >>></a>
+<a style="color: white;font-size: 65%;"><<< <?php echo $wid;?>% profile complete >>></a>
 </div>
 </div>
 
@@ -133,7 +132,7 @@ if ($row['f_resume']!="")
   <div class="hoc center"> 
     <!-- ################################################################################################ -->
  <br>
- <div style="margin-left: 100px;border-radius: 10px;border :solid #A3D044 3px; background: white; color:black;max-width: 500px;position: relative;top: 30px;"><br>
+ <div style="margin-left: 100px;border-radius: 10px;border :solid #A3D044 3px;background: rgba(0,0,0,0.5); color:black;max-width: 500px;position: relative;top: 30px;"><br>
     
       <h1 style="font-size: 40px;background: #A3D044;">GENERAL</h1>
       <form action="f_setting.php" method="post" style="margin-left: 30px">
@@ -147,45 +146,42 @@ $row=mysqli_fetch_assoc($result);
 ?>
 
 
-        <label style="color: #A3D044;position: relative;left: -190px;margin-bottom: 20px;">Name :</label>
+        <label style="color: #A3D044;float: left;margin-left: 10px;font-size: 15px;">Name :</label>
         <div class="one_half first">
-        <input type="text" name="fname" size="20" value="<?php echo $row['f_fname'];?>" style="text-align: center;border:none;border-bottom: solid #A3D044 2px;" required>
+        <input type="text" name="fname" size="25" value="<?php echo $row['f_fname'];?>" style="text-align: center;border:none;border-bottom: solid #A3D044 2px;padding: 7px;border-radius: 5px;" required >
         </div>
         <div class="one_half">
-        <input type="text" name="lname" size="20" value="<?php echo $row['f_lname'];?>" style="text-align: center;border:none;border-bottom: solid #A3D044 2px;" required><br>
+        <input type="text" name="lname" size="25" value="<?php echo $row['f_lname'];?>" style="text-align: center;border:none;border-bottom: solid #A3D044 2px;padding: 7px;border-radius: 5px;margin-bottom: 30px;" required >
         </div>
+
   
-        <br><label style="color: #A3D044;position: relative;left: -190px">Email :</label>
-        <label style="color: #A3D044;position: relative;top: -25px;left:70px;">Phone :</label>
-
+        <label style="color: #A3D044;float: left;margin-left: 10px;font-size: 15px;">Email & phone :</label>
         <div class="one_half first">
-        <input type="email" name="email" size="20" value="<?php echo $row['f_email'];?>" style="position: relative;top: -15px ;text-align: center;border:none;border-bottom: solid #A3D044 2px;" required><br>
+        <input type="email" name="email" size="25" value="<?php echo $row['f_email'];?>" style="text-align: center;border:none;border-bottom: solid #A3D044 2px;padding: 7px;border-radius: 5px;margin-bottom: 30px;" required>
         </div>
         <div class="one_half">
-        <input type="longnumber" name="number" size="20"  value="<?php echo $row['f_number'];?>" style="position: relative;top: -15px ;text-align: center;border:none;border-bottom: solid #A3D044 2px;" required><br>
+        <input type="longnumber" name="number" size="25"  value="<?php echo $row['f_number'];?>" style="text-align: center;border:none;border-bottom: solid #A3D044 2px;padding: 7px;border-radius: 5px;margin-bottom: 30px;" required>
         </div>
 
 
-
-        <label style="color: #A3D044;position: relative;left: -185px">Gender :</label>
-        <label style="color: #A3D044;position: relative;top: -25px;left:70px;">Age :</label>
+        <label style="color: #A3D044;float: left;margin-left: 10px;font-size: 15px;">Name :</label>
 
         <div class="one_half first">
-          <select name ="gender" style="position: relative;top: -15px ;text-align:center;border:none;border-bottom: solid #A3D044 2px;color: black;width:170px;" required>
+          <select name ="gender" style="text-align: center;border:none;border-bottom: solid #A3D044 2px;padding: 7px;border-radius: 5px;margin-bottom: 30px;width: 202px; text-align-last:center;" required>
             <option value="">--- select gender ---</option>
             <option value="male" <?php if($row['f_gender']=='male'){echo "selected";}?>>Male</option>
             <option value="female" <?php if($row['f_gender']=='female'){echo "selected";}?>>Female</option>
           </select>
         </div>
         <div class="one_half">
-        <input type="number" name="age" min="1" max="100  " size="30" value="<?php echo $row['f_age'];?>" style="position: relative;top: -15px ;text-align: center;border:none;border-bottom: solid #A3D044 2px;" required><br>
+        <input type="longnumber" name="age" min="1" max="100" size="25" value="<?php echo $row['f_age'];?>" style="text-align: center;border:none;border-bottom: solid #A3D044 2px;padding: 7px;border-radius: 5px;margin-bottom: 30px;" required>
         </div>
 
 
-
-
-        <br><br><input style="background:#A3D044 ;border-radius:3px; color:black;padding:5px;padding-right:30px ;padding-left: 30px" type="submit" name="submit" value="UPDATE"><br><br>
-
+        <div align="center">
+          <input style="background:#A3D044 ;padding:5px;padding-right:30px ;padding-left: 30px;border-radius:3px; color:black;cursor: pointer;
+        " type="submit" name="submit" value="Update"><br><br>
+        </div>
       </form>
 
   </div>
@@ -223,21 +219,15 @@ if ($conn->query($sql) === TRUE)
   $_SESSION['f_fname']=$fname;
 
 ?>
-<center><div id="fade" style="color: black;z-index: 2;background: #A3D044;max-width: 495px;position: relative;left:-140px;top: -100px;height:30px; text-align:center;padding-top:5px;"><?php echo $msg; ?> </div></center>
+<center><div id="fade" style="color: black;z-index: 2;background: #A3D044;max-width: 500px;position: relative;left:-140px;top: -110px;height:30px; text-align:center;padding-top:5px;"><?php echo $msg; ?> </div></center>
 <script>  
 setTimeout(function() {
   $("#fade").fadeOut().empty();
 }, 1500);
 </script>
-
 <?php
-
-
-header('Location:f_post.php');
 }
 else 
     echo "Error: " . $sql . "<br>" . $conn->error;
-
-header('Location:f_post.php');
 }
 ?>

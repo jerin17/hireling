@@ -108,7 +108,7 @@ if($notif==0){
 </div>
 
 
-<div class="wrapper row2" style="background-image:url('images/demo/backgrounds/06.jpg');">
+<div class="wrapper bgded overlay" style="background-image:url('images/demo/backgrounds/9.jpg');min-height: 565px;">
 <?php  
 include 'config.php';
 $f_id=$_SESSION['f_id'];
@@ -129,23 +129,23 @@ if ($row['f_resume']!="")
  ?>
 
 
-<div class="wrapper row5" style="max-width: 300px;float: right; margin-right: 100px;margin-top:100px;border-radius: 3px;border-left:solid #A3D044 10px;font-family: Allerta;font-size: 22px;color:#A3D044;background:white;">
+<div class="wrapper row5" style="max-width: 300px;float: right; margin-right: 100px;margin-top:100px;border-radius: 3px;font-family: Allerta;font-size: 22px;color:#A3D044;background: rgba(0,0,0,0.5);border-radius: 10px;">
 
 <a href="f_setting.php" style="color:#A3D044;background:black;"><div style="padding: 20px;" >GENERAL <div style="float: right;"><?php echo ' &#10003';?></div></div></a>
 <a href="f_setting_picture.php" style="color:#A3D044;background:black;"><div style="padding: 20px;" >PROFILE PICTURE <div style="float: right;"><?php if($piccomp==1) echo ' &#10003';?></div></div></a>
-<a href="f_setting_bio.php" style="color:black;background:#DADFE1;"><div style="background:#DADFE1;text-align: center;padding: 20px;">BIO <div style="float: right;"><?php if($biocomp==1) echo ' &#10003';?></div></div></a>
+<a href="f_setting_bio.php" style="color:black;"><div style="background:#A3D044;text-align: center;padding: 20px;">BIO <div style="float: right;"><?php if($biocomp==1) echo ' &#10003';?></div></div></a>
 <a href="f_setting_resume.php" style="color:#A3D044;background:black;"><div style="padding: 20px;" >UPLOAD RESUME <div style="float: right;"><?php if($rescomp==1) echo ' &#10003';?></div></div></a>
 
-<div style="border:solid #A3D044 5px ;border-right: solid #A3D044 10px;text-align: center;">
+<div style="text-align: center;">
   <div style=" width: <?php echo $wid;?>%;height: 40px;background-color: #3498db;"></div>
-<a style="color: black;background: white;font-size: 50%"><<< <?php echo $wid;?>% profile complete >>></a>
+<a style="color: white;font-size: 65%;"><<< <?php echo $wid;?>% profile complete >>></a>
 </div>
 </div>
 
   <div class="hoc center"> 
     <!-- ################################################################################################ -->
  <br>
- <div style="margin-left: 100px;border-radius: 10px;border :solid #A3D044 3px; background: white; color:black;max-width: 500px;position: relative;top: 30px;"><br>
+ <div style="margin-left: 100px;border-radius: 10px;border :solid #A3D044 3px;background: rgba(0,0,0,0.5); color:black;max-width: 500px;position: relative;top: 30px;"><br>
     
       <h1 style="font-size: 40px;background: #A3D044;">BIO</h1>
       <form action="f_setting_bio.php" method="post" style="margin-left: 30px">
@@ -158,10 +158,9 @@ $result=mysqli_query($conn,$sql);
 $row=mysqli_fetch_assoc($result);
 ?>
 
-
-        <label style="color: #A3D044;position: relative;left: -175px;margin-bottom: 20px;">Describe Yourself :</label>
+        <label style="color: #A3D044;float: left;margin-left: 0px;font-size: 15px;">Describe Yourself :</label>
         <div>
-        <textarea name="bio" placeholder="Tell the recruiter about yourself !" style="width:435px;height: 200px;border: none;border:solid #A3D044 2px;"><?php echo $row['f_bio'];?></textarea>  
+        <textarea name="bio" placeholder="Tell the recruiter about yourself !" style="width:435px;height: 200px;border: none;border:solid #A3D044 2px;padding: 10px;border-radius: 10px;"><?php echo $row['f_bio'];?></textarea>  
 
         </div><br><br>
 

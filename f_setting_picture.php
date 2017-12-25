@@ -76,7 +76,7 @@ if($notif==1 ||$notif==2 ||$notif==3){
         <li><a class="drop" href="" style="padding: 13px;">
          <?php $photo=$_SESSION['f_image'];?>
          <img src="images/demo/fprofile/<?php echo $photo;?>" style="width: 40px;height: 40px;border-radius: 100px"> 
-<div style="float: right;margin-right: 50px;position: relative;top: -10px;left: -10px;color:white;background:red;height:20px;width:20px;border-radius:100px;font-size:17px;"> &nbsp<?php echo $notif; ?> </div>        
+<div style="float: right;margin-right: 50px;position: relative;top: -8px;left: -15px;color:white;background:red;height:20px;width:20px;border-radius:100px;font-size:12px;padding-top: 3px;text-align: center;"><?php echo $notif; ?> </div>        
          
          </a>
           <ul>        
@@ -114,7 +114,7 @@ if($notif==0){
 </div>
 
 
-<div class="wrapper row2" style="background-image:url('images/demo/backgrounds/06.jpg');">
+<div class="wrapper bgded overlay" style="background-image:url('images/demo/backgrounds/9.jpg');min-height: 565px;">
 <?php  
 include 'config.php';
 $f_id=$_SESSION['f_id'];
@@ -135,23 +135,23 @@ if ($row['f_resume']!="")
  ?>
 
 
-<div class="wrapper row5" style="max-width: 300px;float: right; margin-right: 100px;margin-top:100px;border-radius: 3px;border-left:solid #A3D044 10px;font-family: Allerta;font-size: 22px;color:#A3D044;background:white;">
+<div class="wrapper row5" style="max-width: 300px;float: right; margin-right: 100px;margin-top:100px;border-radius: 3px;font-family: Allerta;font-size: 22px;color:#A3D044;background: rgba(0,0,0,0.5);border-radius: 10px;">
 
 <a href="f_setting.php" style="color:#A3D044;background:black;"><div style="padding: 20px;" >GENERAL <div style="float: right;"><?php echo ' &#10003';?></div></div></a>
-<a href="f_setting_picture.php" style="color:black;background:#DADFE1;"><div style="background:#DADFE1;text-align: center;padding: 20px;">PROFILE PICTURE <div style="float: right;"><?php if($piccomp==1) echo ' &#10003';?></div></div></a>
+<a href="f_setting_picture.php" style="color:black;background:#A3D044;"><div style="background:#A3D044;text-align: center;padding: 20px;">PROFILE PICTURE <div style="float: right;"><?php if($piccomp==1) echo ' &#10003';?></div></div></a>
 <a href="f_setting_bio.php" style="color:#A3D044;background:black;"><div style="padding: 20px;" >BIO <div style="float: right;"><?php if($biocomp==1) echo ' &#10003';?></div></div></a>
 <a href="f_setting_resume.php" style="color:#A3D044;background:black;"><div style="padding: 20px;" >UPLOAD RESUME <div style="float: right;"><?php if($rescomp==1) echo ' &#10003';?></div></div></a>
 
-<div style="border:solid #A3D044 5px ;border-right: solid #A3D044 10px;text-align: center;">
+<div style="text-align: center;">
   <div style=" width: <?php echo $wid;?>%;height: 40px;background-color: #3498db;"></div>
-<a style="color: black;background: white;font-size: 50%"><<< <?php echo $wid;?>% profile complete >>></a>
+<a style="color: white;font-size: 65%;"><<< <?php echo $wid;?>% profile complete >>></a>
 </div>
 </div>
 
   <div class="hoc center"> 
     <!-- ################################################################################################ -->
  <br>
- <div style="margin-left: 100px;border-radius: 10px;border :solid #A3D044 3px; background: white; color:black;max-width: 500px;position: relative;top: 30px;"><br>
+ <div style="margin-left: 100px;border-radius: 10px;border :solid #A3D044 3px;background: rgba(0,0,0,0.5); color:black;max-width: 500px;position: relative;top: 30px;"><br>
     
       <h1 style="font-size: 40px;background: #A3D044;">PROFILE PICTURE</h1>
       <form action="f_setting_picture.php" method="post" enctype="multipart/form-data" style="margin-left: 30px" >
@@ -168,7 +168,7 @@ $row=mysqli_fetch_assoc($result);
         <input type="hidden" name="f_bio" value="<?php echo $row['f_bio'];?>">
         <input type="hidden" name="f_resume" value="<?php echo $row['f_resume'];?>">
 
-        <label style="color: #A3D044;position: relative;left: -175px;top:10px;margin-top: 35px;">Update picture:<br><br></label>
+        <label style="color: #A2D044;position: relative;left: -175px;top:10px;margin-top: 35px;">Update picture : <br><br></label>
         <input type="hidden" name="MAX_FILE_SIZE" value="10000000">
         <input style="float: right;position: relative;cursor: pointer;top: -40px;margin-right: 50px;color: #A3D044;" type="file" name="image" required /><br>
         <!-- 
