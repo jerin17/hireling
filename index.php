@@ -29,7 +29,7 @@
         <li><a href="#top">Home</a></li>         
         <li><a href="#jobs">Jobs</a></li>         
         <li><a href="#about">About Us</a></li>
-        <li><a href="contact.php">Write to us</a></li>
+        <li><a href="#write">Write to us</a></li>
         <li><a href="#contact">Contact</a></li>
 <!-- 
         <li><a href="loginf.php" style="background: #A3D044;color: white;padding: 13px;">Free lancer Login</a></li>
@@ -135,7 +135,7 @@ if($user=="r" || $notif==0){
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper bgded overlay" style="background-image:url('images/demo/backgrounds/10.jpeg');">
+<div class="wrapper bgded overlay" style="background-image:url('images/demo/backgrounds/10.jpg');">
   <div id="pageintro"> 
     <!-- ################################################################################################ -->
     <article>
@@ -301,6 +301,8 @@ else {
     <!-- ################################################################################################ -->
   </section>
 </div>
+<br>    <section id="write">
+
 <div class="wrapper bgded overlay" style="background-image:url('images/demo/gallery/contactus1.jpg');min-height: 480px;">
   <article class="hoc container clear"> 
     <!-- ################################################################################################ -->
@@ -309,7 +311,7 @@ else {
     <p class="nospace"><a class="btn medium" href="contact.php">Write to US &raquo;</a></p>
     <!-- ################################################################################################ -->
   </article>
-</div>
+</div><br>
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->

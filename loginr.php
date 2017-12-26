@@ -103,7 +103,7 @@ setTimeout(function() {
         <input style="background:#A3D044 ;border-radius:3px; color:black;padding:5px;padding-right:30px ;padding-left: 30px;margin-bottom: 10px;cursor: pointer;" type="submit" name="LOGIN">
       </form>
 
-  <a href="" style="color: white;float: right;padding: 5px;margin: 5px;"><u>forgot password</u> ?</a>
+  <a href="forgot_password.php?user=r" style="color: white;float: right;padding: 5px;margin: 5px;"><u>forgot password</u> ?</a>
   <a href="registerr.php" style="color: white;float: left;padding: 5px;margin: 5px;"><u>not registered yet</u> ?</a>
 <br><br>
   </div>

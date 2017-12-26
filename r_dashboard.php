@@ -54,11 +54,31 @@ include 'sessionr.php';
 </div>
 
 <div class="wrapper bgded overlay" >
-  <div style="background-image:url('images/demo/backgrounds/06.png');" align="center"> 
+  <div style="background-image:url('images/demo/backgrounds/10.jpg');background-size: 100%;min-height: 87vh;" align="center"> 
   <br>
-  <div style="border-left:solid #A3D044 7px;border-bottom:solid #A3D044 3px;border-right:solid #A3D044 7px; background: white; color:black;max-width: 900px;text-align: left;">
-      
-      <h1 style="font-size: 40px;background: #A3D044;text-align: center;font-family: monospace;"><?php echo $_SESSION['r_org'];?></h1>
+  <div style="float:right;background: rgba(255,255,255,1); color:black;margin: 30px; padding: 20px;border-radius:5px;min-width: 300px;box-shadow: 3px 3px grey;text-align: left;max-width: 100px;">
+   <h1 style="font-size: 40px;background: #A3D044;text-align: center;font-family: monospace;"><?php echo $_SESSION['r_org'];?></h1>
+<?php 
+      include 'config.php';
+      $r_id=$_SESSION['r_id'];
+      $sql1="SELECT * FROM recruiters WHERE r_id='$r_id'";    
+      $result1=mysqli_query($conn,$sql1);
+      $row1 = mysqli_fetch_array($result1);
+?>    
+  
+<center><img src="logo/<?php echo $row1['r_image']; ?>"></center>
+<br>
+  <i style="text-align:left;"><?php echo $row1['r_bio'];?></i>
+   <a href="r_setting.php" style="color: blue;float: right;">[edit]</a> 
+  </div>
+  
+
+
+
+ <div style="border:solid #A3D044 7px;border-bottom:solid #A3D044 3px;background: rgba(0,0,0,0.5); color:black;min-width: 645px;overflow: hidden;text-align: left;border-radius: 10px;margin-right: 30px;padding: 10px;position: relative;left: 15px;">
+<!--   <div style="margin-left: 100px;border-radius: 10px;border :solid #A3D044 3px;background: rgba(0,0,0,0.5); color:black;max-width: 500px;position: relative;top: 30px;"><br>
+ -->      
+      <h1 style="font-size: 40px;background: #A3D044;text-align: center;font-family: monospace;">POSTS</h1>
 
 
       <?php 
@@ -69,7 +89,7 @@ include 'sessionr.php';
       if ($result->num_rows > 0) {
       while($row = $result->fetch_assoc()) {
       ?>
-         <div class="row2" style="margin: 20px;padding: 20px;">
+         <div class="row2" style="margin: 20px;padding: 20px;background: white;border-radius: 10px;">
          
             Type <?php for($i=0; $i<=11; $i++){echo "&nbsp";}?>  :  <b style="text-transform: uppercase;"><?php echo $row['j_type']; ?></b><br>
             Location <?php for($i=0; $i<=5; $i++){echo "&nbsp";}?>  :  <b><?php echo $row['j_location']; ?></b><br>
@@ -81,7 +101,7 @@ include 'sessionr.php';
                <a href="r_postdelete.php?id=<?php echo $row['j_id'];?>" onclick="return confirm('Do you want to delete this record ?')"><div style="font-family: fantasy;font-size: 13px;background:#A3D044; color: white;width: 85px;text-align: center;border-radius: 5px;float: right;padding: 5px;margin-right: 7px;">DELETE</div></a>
                <a href="r_postedit.php?id=<?php echo $row['j_id'];?>" ><div style="font-family: fantasy;font-size: 13px;background:#A3D044; color: white;width: 85px;text-align: center;border-radius: 5px;float: right;padding: 5px;margin-right: 7px;">EDIT</div></a><br>
 
-
+<br><br>
          </div>    
 
 <?php }}
