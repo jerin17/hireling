@@ -82,6 +82,7 @@ if($notif==1 ||$notif==2 ||$notif==3){
           <ul>        
             <li><a style="text-align: center;text-transform: uppercase;cursor: default;"><?php echo 'Welcome, '.$_SESSION['f_fname'];?></a></li>  
             <li><a href="f_setting.php">Settings<div style="float: right;color:white;background:red;height:20px;width:20px;border-radius:100px;font-size:17px;"> &nbsp<?php echo $notif; ?></div></a></li>
+            <li><a href="change_password.php">Change Password</a></li>
             <li><a href="logout.php">Logout</a></li>
           </ul>
 
@@ -102,6 +103,7 @@ if($notif==0){
           <ul>        
             <li><a style="text-align: center;text-transform: uppercase;cursor: default;"><?php echo 'Welcome, '.$_SESSION['f_fname'];?></a></li>  
             <li><a href="f_setting.php">Settings</a></li>
+            <li><a href="change_password.php">Change Password</a></li>
             <li><a href="logout.php">Logout</a></li>
           </ul>
 <?php  

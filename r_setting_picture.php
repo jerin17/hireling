@@ -60,6 +60,7 @@ header('Location:r_setting_picture.php');
           <ul>        
             <li><a style="text-align: center;text-transform: uppercase;cursor: default;"><?php echo 'Welcome, '.$_SESSION['r_fname'];?></a></li>  
             <li><a href="r_setting.php">Settings</a></li>
+            <li><a href="change_password.php">Change Password</a></li>
             <li><a href="logout.php">Logout</a></li>
           </ul>
         </li>

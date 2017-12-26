@@ -105,7 +105,7 @@ if($notif==1 ||$notif==2 ||$notif==3){
           <ul>        
             <li><a style="text-align: center;text-transform: uppercase;cursor: default;"><?php echo 'Welcome, '.$username;?></a></li>  
           <li><a href=<?php echo $redirect2; ?>>SETTINGS<div style="float: right;color:white;background:red;height:20px;width:20px;border-radius:100px;font-size:17px;"> &nbsp<?php echo $notif; ?></div></a></li>  
-
+            <li><a href="change_password.php">CHANGE PASSWORD</a></li>
             <li><a href="logout.php">LOGOUT</a></li>      
           </ul>
 <?php } ?>
@@ -121,6 +121,7 @@ if($user=="r" || $notif==0){
           <ul>        
             <li><a style="text-align: center;text-transform: uppercase;cursor: default;"><?php echo 'Welcome, '.$username;?></a></li>  
             <li><a href=<?php echo $redirect2; ?>>SETTINGS</a></li>
+            <li><a href="change_password.php">CHANGE PASSWORD</a></li>
             <li><a href="logout.php">LOGOUT</a></li>      
           </ul>
 <?php  
